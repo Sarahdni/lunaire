@@ -1,14 +1,21 @@
-from src.logger import setup_logger
+import logging
+import os
 
-logger = setup_logger('example', 'logs/example.log')
 
-def add_numbers(a, b):
-    logger.info(f"Adding numbers: {a} + {b}")
-    result = a + b
-    logger.info(f"Result: {result}")
-    return result
+def setup_logger(name, log_file, level=logging.INFO):
+    """Function to setup as many loggers as you want"""
+
+    formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+    
+    handler = logging.FileHandler(log_file)        
+    handler.setFormatter(formatter)
+
+    logger = logging.getLogger(name)
+    logger.setLevel(level)
+    logger.addHandler(handler)
+
+    return logger
 
 # Exemple d'utilisation
-if __name__ == "__main__":
-    result = add_numbers(5, 3)
-    print(f"5 + 3 = {result}")
+# main_logger = setup_logger('main_logger', 'logs/main.log')
+# main_logger.info('Ceci est un message de log')

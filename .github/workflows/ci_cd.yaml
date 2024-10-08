@@ -11,28 +11,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.9
+    - name: Set up Python 3.11
       uses: actions/setup-python@v2
       with:
-        python-version: 3.9
+        python-version: 3.11
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install flake8 pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        python -m pip install --upgrade pip setuptools wheel
+        pip install -r requirements.txt
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics --exclude=env,.venv,venv
         # exit-zero treats all errors as warnings
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics --exclude=env,.venv,venv
     - name: Test with pytest
       run: |
         pytest
-    - name: Deploy to production
-      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      run: |
-        echo "Add your deployment script here"
-        # Example: rsync -avz --delete ./ user@your-server:/path/to/your/app/
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
