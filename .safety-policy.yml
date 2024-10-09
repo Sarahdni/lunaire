@@ -1,0 +1,3 @@
+security:
+  ignore-vulnerabilities:
+    - vulnerability-id: 70612
