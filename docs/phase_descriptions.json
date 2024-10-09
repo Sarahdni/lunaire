@@ -1,0 +1,166 @@
+{
+    "Menstrual": {
+      "title": "❄️ Winter flow | Calm and introspection",
+      "description": {
+        "mantra": "from mantras_list.py",
+        "phase_info": {"text": "Menstrual phase", "link": "https://www.example.com/menstrual-info"},
+        "sports_recommendations": [
+          {"text": "Gentle yoga", "link": "https://www.example.com/gentle-yoga"},
+          "Stretching",
+          "Light walking",
+          {"text": "Meditation", "link": "https://www.example.com/meditation-techniques"}
+        ],
+        "nutrition": {
+          "recommended_foods": [
+            {"text": "Iron-rich foods", "link": "https://www.example.com/iron-rich-foods"},
+            "Berries (blueberries, strawberries, pomegranates)",
+            {"text": "Vitamin C-rich foods", "link": "https://www.example.com/vitamin-c-foods"},
+            "Soothing herbal teas (chamomile, ginger)"
+          ],
+          "foods_to_avoid": [
+            "Very salty foods (can worsen water retention)",
+            {"text": "Caffeine and alcohol", "link": "https://www.example.com/caffeine-alcohol-effects"}
+          ]
+        },
+        "vitamins_supplements": [
+          {"text": "Iron", "link": "https://www.example.com/iron-supplements"},
+          "Vitamin C",
+          {"text": "Magnesium", "link": "https://www.example.com/magnesium-benefits"}
+        ],
+        "seed_cycling": {
+          "seeds": ["Flax seeds", "Pumpkin seeds"],
+          "benefits": "Supports estrogen production for the upcoming follicular phase",
+          "link": "https://www.example.com/seed-cycling-guide"
+        },
+        "self_care_tips": [
+          {"text": "Take warm baths to relieve cramps", "link": "https://www.example.com/warm-bath-benefits"},
+          "Allow yourself more rest",
+          {"text": "Practice meditation or deep breathing", "link": "https://www.example.com/deep-breathing-techniques"},
+          "Use a hot water bottle on your lower abdomen"
+        ]
+      }
+    },
+    "Follicular": {
+      "title": "🌱 Spring awakening | Growth and potential",
+      "description": {
+        "mantra": "from mantras_list.py",
+        "phase_info": {"text": "Follicular phase", "link": "https://www.example.com/follicular-info"},
+        "sports_recommendations": [
+          {"text": "Cardio exercises", "link": "https://www.example.com/cardio-exercises"},
+          "Strength training",
+          "Dance classes",
+          {"text": "High-intensity interval training (HIIT)", "link": "https://www.example.com/hiit-workouts"}
+        ],
+        "nutrition": {
+          "recommended_foods": [
+            {"text": "Lean proteins", "link": "https://www.example.com/lean-proteins"},
+            "Leafy green vegetables",
+            {"text": "Complex carbohydrates", "link": "https://www.example.com/complex-carbs"},
+            "Fermented foods (yogurt, kefir, sauerkraut)"
+          ],
+          "foods_to_avoid": [
+            "Processed foods",
+            {"text": "Excessive sugar", "link": "https://www.example.com/sugar-effects"}
+          ]
+        },
+        "vitamins_supplements": [
+          {"text": "B-complex vitamins", "link": "https://www.example.com/b-vitamins"},
+          "Omega-3 fatty acids",
+          {"text": "Zinc", "link": "https://www.example.com/zinc-benefits"}
+        ],
+        "seed_cycling": {
+          "seeds": ["Flax seeds", "Pumpkin seeds"],
+          "benefits": "Continues to support estrogen production",
+          "link": "https://www.example.com/seed-cycling-guide"
+        },
+        "self_care_tips": [
+          {"text": "Set new goals and intentions", "link": "https://www.example.com/goal-setting"},
+          "Try a new hobby or skill",
+          {"text": "Organize and declutter your space", "link": "https://www.example.com/decluttering-tips"},
+          "Connect with friends and socialize"
+        ]
+      }
+    },
+    "Ovulatory": {
+      "title": "☀️ Summer bloom | Peak energy and confidence",
+      "description": {
+        "mantra": "from mantras_list.py",
+        "phase_info": {"text": "Ovulatory phase", "link": "https://www.example.com/ovulatory-info"},
+        "sports_recommendations": [
+          {"text": "High-intensity workouts", "link": "https://www.example.com/high-intensity-workouts"},
+          "Team sports",
+          "Running or cycling",
+          {"text": "Weight lifting", "link": "https://www.example.com/weight-lifting-benefits"}
+        ],
+        "nutrition": {
+          "recommended_foods": [
+            {"text": "Anti-inflammatory foods", "link": "https://www.example.com/anti-inflammatory-foods"},
+            "Colorful fruits and vegetables",
+            {"text": "Healthy fats (avocado, nuts, seeds)", "link": "https://www.example.com/healthy-fats"},
+            "Lean proteins"
+          ],
+          "foods_to_avoid": [
+            "Processed foods",
+            {"text": "Refined sugars", "link": "https://www.example.com/refined-sugar-effects"}
+          ]
+        },
+        "vitamins_supplements": [
+          {"text": "Vitamin E", "link": "https://www.example.com/vitamin-e-benefits"},
+          "Vitamin D",
+          {"text": "Coenzyme Q10", "link": "https://www.example.com/coq10-benefits"}
+        ],
+        "seed_cycling": {
+          "seeds": ["Sunflower seeds", "Sesame seeds"],
+          "benefits": "Supports progesterone production for the upcoming luteal phase",
+          "link": "https://www.example.com/seed-cycling-guide"
+        },
+        "self_care_tips": [
+          {"text": "Engage in social activities", "link": "https://www.example.com/social-wellbeing"},
+          "Express yourself creatively",
+          {"text": "Practice self-confidence exercises", "link": "https://www.example.com/confidence-boosting"},
+          "Try public speaking or networking events"
+        ]
+      }
+    },
+    "Luteal": {
+      "title": "🍂 Autumn nesting | Slowing down and preparing",
+      "description": {
+        "mantra": "from mantras_list.py",
+        "phase_info": {"text": "Luteal phase", "link": "https://www.example.com/luteal-info"},
+        "sports_recommendations": [
+          {"text": "Pilates", "link": "https://www.example.com/pilates-benefits"},
+          "Swimming",
+          "Yoga",
+          {"text": "Low-impact cardio", "link": "https://www.example.com/low-impact-cardio"}
+        ],
+        "nutrition": {
+          "recommended_foods": [
+            {"text": "Magnesium-rich foods", "link": "https://www.example.com/magnesium-rich-foods"},
+            "Complex carbohydrates (sweet potatoes, brown rice)",
+            {"text": "Calcium-rich foods", "link": "https://www.example.com/calcium-rich-foods"},
+            "Green leafy vegetables"
+          ],
+          "foods_to_avoid": [
+            "Caffeine (can increase anxiety and irritability)",
+            {"text": "Salty foods", "link": "https://www.example.com/salt-effects-pms"}
+          ]
+        },
+        "vitamins_supplements": [
+          {"text": "Magnesium", "link": "https://www.example.com/magnesium-benefits"},
+          "Vitamin B6",
+          {"text": "Calcium", "link": "https://www.example.com/calcium-benefits"}
+        ],
+        "seed_cycling": {
+          "seeds": ["Sunflower seeds", "Sesame seeds"],
+          "benefits": "Continues to support progesterone production",
+          "link": "https://www.example.com/seed-cycling-guide"
+        },
+        "self_care_tips": [
+          {"text": "Practice stress-management techniques", "link": "https://www.example.com/stress-management"},
+          "Take time for self-reflection",
+          {"text": "Engage in calming activities like reading or crafting", "link": "https://www.example.com/calming-hobbies"},
+          "Prepare your space for the upcoming menstrual phase"
+        ]
+      }
+    }
+  }
