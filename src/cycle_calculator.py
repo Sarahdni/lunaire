@@ -69,7 +69,18 @@ def create_ical(phases, user_info, phase_descriptions, mantras):
         
         description = f"Mantra: {mantra}\n\n"
         description += f"Phase: {phase_info['description']['phase_info']['text']}\n"
-        # Ajoutez d'autres détails à la description si nécessaire
+        description += "Sports recommendations:\n"
+        for sport in phase_info['description']['sports_recommendations']:
+            if isinstance(sport, dict):
+                description += f"- {sport['text']}\n"
+            else:
+                description += f"- {sport}\n"
+        description += "\nNutrition recommendations:\n"
+        for food in phase_info['description']['nutrition']['recommended_foods']:
+            if isinstance(food, dict):
+                description += f"- {food['text']}\n"
+            else:
+                description += f"- {food}\n"
         
         event.add('description', description)
         cal.add_component(event)
@@ -87,7 +98,18 @@ def create_google_calendar(phases, user_info, phase_descriptions, mantras):
         
         description = f"Mantra: {mantra}\n\n"
         description += f"Phase: {phase_info['description']['phase_info']['text']}\n"
-        # Ajoutez d'autres détails à la description si nécessaire
+        description += "Sports recommendations:\n"
+        for sport in phase_info['description']['sports_recommendations']:
+            if isinstance(sport, dict):
+                description += f"- {sport['text']}\n"
+            else:
+                description += f"- {sport}\n"
+        description += "\nNutrition recommendations:\n"
+        for food in phase_info['description']['nutrition']['recommended_foods']:
+            if isinstance(food, dict):
+                description += f"- {food['text']}\n"
+            else:
+                description += f"- {food}\n"
         
         writer.writerow([
             phase_info['title'],
@@ -110,7 +132,18 @@ def create_outlook_calendar(phases, user_info, phase_descriptions, mantras):
         
         description = f"Mantra: {mantra}\n\n"
         description += f"Phase: {phase_info['description']['phase_info']['text']}\n"
-        # Ajoutez d'autres détails à la description si nécessaire
+        description += "Sports recommendations:\n"
+        for sport in phase_info['description']['sports_recommendations']:
+            if isinstance(sport, dict):
+                description += f"- {sport['text']}\n"
+            else:
+                description += f"- {sport}\n"
+        description += "\nNutrition recommendations:\n"
+        for food in phase_info['description']['nutrition']['recommended_foods']:
+            if isinstance(food, dict):
+                description += f"- {food['text']}\n"
+            else:
+                description += f"- {food}\n"
         
         writer.writerow([
             phase_info['title'],
