@@ -3,9 +3,8 @@ from icalendar import Calendar, Event
 import csv
 import io
 import json
-import os
-import importlib.util
 
+# Charger les descriptions des phases et les mantras
 def load_phase_descriptions(file_path='docs/phase_descriptions.json'):
     with open(file_path, 'r', encoding='utf-8') as file:
         return json.load(file)
@@ -14,16 +13,11 @@ def load_mantras(file_path='docs/mantras_list.json'):
     with open(file_path, 'r', encoding='utf-8') as file:
         return json.load(file)
 
+# Obtenir le mantra pour la phase donnée
 def get_mantra(phase, date, mantras):
     month = date.strftime('%B')
     day = date.day
-    
-    if day <= 10:
-        index = 0  # Beginning
-    elif day <= 20:
-        index = 1  # Middle
-    else:
-        index = 2  # End
+    index = 0 if day <= 10 else 1 if day <= 20 else 2
     
     try:
         mantra = mantras[phase][month][index]
@@ -31,6 +25,7 @@ def get_mantra(phase, date, mantras):
     except (KeyError, IndexError):
         return f"Mantra not available for {phase} phase, {month}, index {index}."
 
+# Calculer le cycle menstruel
 def calculate_cycle(start_date, cycle_length, period_length, num_months=12):
     if isinstance(start_date, str):
         try:
@@ -55,107 +50,90 @@ def calculate_cycle(start_date, cycle_length, period_length, num_months=12):
         current_date = cycle_end
     return all_phases
 
+# Générer la description de chaque phase
+def generate_phase_description(phase_name, phase_info, mantra):
+    description = f"Mantra: {mantra}\n\n"
+    description += f"Phase: {phase_info['description']['phase_info']['text']}\n\n"
 
-def create_ical(phases, user_info, phase_descriptions, mantras):
-    cal = Calendar()
-    for phase_name, start, end in phases:
+    # Recommandations sportives
+    description += "Sports recommendations:\n"
+    for sport in phase_info['description']['sports_recommendations']:
+        description += f"- {sport['text'] if isinstance(sport, dict) else sport}\n"
+
+    # Recommandations nutritionnelles
+    description += "\nNutrition recommendations:\n"
+    for food in phase_info['description']['nutrition']['recommended_foods']:
+        description += f"- {food['text'] if isinstance(food, dict) else food}\n"
+    
+    # Aliments à éviter
+    description += "\nFoods to avoid:\n"
+    for food in phase_info['description']['nutrition']['foods_to_avoid']:
+        description += f"- {food['text'] if isinstance(food, dict) else food}\n"
+
+    # Vitamines et suppléments
+    description += "\nVitamins & Supplements:\n"
+    for vitamin in phase_info['description']['vitamins_supplements']:
+        description += f"- {vitamin['text'] if isinstance(vitamin, dict) else vitamin}\n"
+
+    # Seed cycling
+    seed_cycling = phase_info['description'].get('seed_cycling', None)
+    if seed_cycling:
+        description += "\nSeed Cycling:\n"
+        description += f"- Seeds: {', '.join(seed_cycling['seeds'])}\n"
+        description += f"- Benefits: {seed_cycling['benefits']} ({seed_cycling.get('link', 'No link')})\n"
+
+    # Astuces de soins personnels
+    description += "\nSelf-Care Tips:\n"
+    for tip in phase_info['description']['self_care_tips']:
+        description += f"- {tip['text'] if isinstance(tip, dict) else tip}\n"
+    
+    return description
+
+# Créer un événement pour un calendrier donné
+def create_event(phase_name, start, end, phase_info, mantras, format='ical'):
+    mantra = get_mantra(phase_name, start, mantras)
+    description = generate_phase_description(phase_name, phase_info, mantra)
+    
+    if format == 'ical':
         event = Event()
-        phase_info = phase_descriptions[phase_name]
-        mantra = get_mantra(phase_name, start, mantras)
-        
         event.add('summary', phase_info['title'])
         event.add('dtstart', start.date())
         event.add('dtend', end.date())
-        
-        description = f"Mantra: {mantra}\n\n"
-        description += f"Phase: {phase_info['description']['phase_info']['text']}\n"
-        description += "Sports recommendations:\n"
-        for sport in phase_info['description']['sports_recommendations']:
-            if isinstance(sport, dict):
-                description += f"- {sport['text']}\n"
-            else:
-                description += f"- {sport}\n"
-        description += "\nNutrition recommendations:\n"
-        for food in phase_info['description']['nutrition']['recommended_foods']:
-            if isinstance(food, dict):
-                description += f"- {food['text']}\n"
-            else:
-                description += f"- {food}\n"
-        
         event.add('description', description)
+        return event
+    elif format == 'csv':
+        return [
+            phase_info['title'],
+            start.strftime("%m/%d/%Y"),
+            end.strftime("%m/%d/%Y"),
+            "True",
+            description
+        ]
+
+# Créer un calendrier au format iCal
+def create_ical(phases, user_info, phase_descriptions, mantras):
+    cal = Calendar()
+    for phase_name, start, end in phases:
+        phase_info = phase_descriptions[phase_name]
+        event = create_event(phase_name, start, end, phase_info, mantras, format='ical')
         cal.add_component(event)
-    
     return cal.to_ical()
 
+# Créer un calendrier Google (CSV)
 def create_google_calendar(phases, user_info, phase_descriptions, mantras):
     output = io.StringIO()
     writer = csv.writer(output)
     writer.writerow(["Subject", "Start Date", "End Date", "All Day Event", "Description"])
-    
     for phase_name, start, end in phases:
         phase_info = phase_descriptions[phase_name]
-        mantra = get_mantra(phase_name, start, mantras)
-        
-        description = f"Mantra: {mantra}\n\n"
-        description += f"Phase: {phase_info['description']['phase_info']['text']}\n"
-        description += "Sports recommendations:\n"
-        for sport in phase_info['description']['sports_recommendations']:
-            if isinstance(sport, dict):
-                description += f"- {sport['text']}\n"
-            else:
-                description += f"- {sport}\n"
-        description += "\nNutrition recommendations:\n"
-        for food in phase_info['description']['nutrition']['recommended_foods']:
-            if isinstance(food, dict):
-                description += f"- {food['text']}\n"
-            else:
-                description += f"- {food}\n"
-        
-        writer.writerow([
-            phase_info['title'],
-            start.strftime("%m/%d/%Y"),
-            end.strftime("%m/%d/%Y"),
-            "True",
-            description
-        ])
-    
+        writer.writerow(create_event(phase_name, start, end, phase_info, mantras, format='csv'))
     return output.getvalue().encode('utf-8')
 
+# Créer un calendrier Outlook (CSV similaire à Google)
 def create_outlook_calendar(phases, user_info, phase_descriptions, mantras):
-    output = io.StringIO()
-    writer = csv.writer(output)
-    writer.writerow(["Subject", "Start Date", "End Date", "All Day Event", "Description"])
-    
-    for phase_name, start, end in phases:
-        phase_info = phase_descriptions[phase_name]
-        mantra = get_mantra(phase_name, start, mantras)
-        
-        description = f"Mantra: {mantra}\n\n"
-        description += f"Phase: {phase_info['description']['phase_info']['text']}\n"
-        description += "Sports recommendations:\n"
-        for sport in phase_info['description']['sports_recommendations']:
-            if isinstance(sport, dict):
-                description += f"- {sport['text']}\n"
-            else:
-                description += f"- {sport}\n"
-        description += "\nNutrition recommendations:\n"
-        for food in phase_info['description']['nutrition']['recommended_foods']:
-            if isinstance(food, dict):
-                description += f"- {food['text']}\n"
-            else:
-                description += f"- {food}\n"
-        
-        writer.writerow([
-            phase_info['title'],
-            start.strftime("%m/%d/%Y"),
-            end.strftime("%m/%d/%Y"),
-            "True",
-            description
-        ])
-    
-    return output.getvalue().encode('utf-8')
+    return create_google_calendar(phases, user_info, phase_descriptions, mantras)
 
+# Créer un calendrier Apple (équivalent à iCal)
 def create_apple_calendar(phases, user_info, phase_descriptions, mantras):
-    # Pour Apple Calendar, nous pouvons utiliser le même format que iCal
     return create_ical(phases, user_info, phase_descriptions, mantras)
 
