@@ -14,25 +14,44 @@ def connect_to_email():
         print(f"Error connecting to email: {str(e)}")
         return None
 
-def get_latest_email(mail, sender_email=None):
+def get_unprocessed_emails(mail, sender_email=None, last_processed_id=None):
     if sender_email is None:
         sender_email = NOTIFICATION_EMAIL
     
-    print(f"Searching for the latest email from {sender_email}")
+    print(f"Searching for unprocessed emails from {sender_email}")
     mail.select('inbox')
-    _, search_data = mail.search(None, f'(FROM "{sender_email}")')
+    
+    search_criteria = f'(FROM "{sender_email}")'
+    if last_processed_id:
+        search_criteria += f' UID {last_processed_id}:*'
+    
+    _, search_data = mail.search(None, search_criteria)
     email_ids = search_data[0].split()
     
     if not email_ids:
-        print(f"No emails found from {sender_email}")
-        return None
+        print(f"No unprocessed emails found from {sender_email}")
+        return []
     
-    latest_email_id = email_ids[-1]
-    _, msg_data = mail.fetch(latest_email_id, "(RFC822)")
-    email_body = msg_data[0][1]
-    email_message = email.message_from_bytes(email_body)
-    print(f"Email found from {sender_email} with subject: {email_message['Subject']}")
-    return email_message
+    emails = []
+    for email_id in email_ids:
+        _, msg_data = mail.fetch(email_id, "(RFC822)")
+        email_body = msg_data[0][1]
+        email_message = email.message_from_bytes(email_body)
+        emails.append((email_id, email_message))
+    
+    print(f"Found {len(emails)} unprocessed emails from {sender_email}")
+    return emails
+
+def save_last_processed_id(email_id):
+    with open('last_processed_id.txt', 'w') as f:
+        f.write(email_id.decode())
+
+def get_last_processed_id():
+    try:
+        with open('last_processed_id.txt', 'r') as f:
+            return f.read().strip()
+    except FileNotFoundError:
+        return None
 
 def parse_email_content(email_message):
     if email_message.is_multipart():

@@ -3,12 +3,26 @@ from datetime import datetime
 
 from . import (
     logger,
-    connect_to_email, get_latest_email, parse_email_content, extract_info,
+    connect_to_email, 
+    get_unprocessed_emails, 
+    parse_email_content, 
+    extract_info,
     send_email_to_user,
-    user_manager, cycle_manager, calendar_manager
+    get_last_processed_id,
+    user_manager, 
+    cycle_manager, 
+    calendar_manager
 )
 
-from .cycle_calculator import load_phase_descriptions, load_mantras, create_ical, create_google_calendar, create_outlook_calendar, create_apple_calendar, calculate_cycle
+from .cycle_calculator import (
+    load_phase_descriptions, 
+    load_mantras, 
+    create_ical, 
+    create_google_calendar, 
+    create_outlook_calendar, 
+    create_apple_calendar, 
+    calculate_cycle
+)
 
 def create_calendar_file(phases, user_info, calendar_type, phase_descriptions, mantras):
     try:
@@ -59,52 +73,57 @@ def main():
     try:
         phase_descriptions = load_phase_descriptions()
         mantras = load_mantras()
-        logger.info(f"Loaded mantras structure: {type(mantras)}")
-        if isinstance(mantras, dict):
-            logger.info(f"First level keys: {list(mantras.keys())}")
-            logger.info(f"Sample mantra: {mantras['Menstrual']['January'][0]}")
-        else:
-            logger.error(f"Mantras is not a dictionary, it's a {type(mantras)}")
 
         mail = connect_to_email()
-        email_message = get_latest_email(mail)
-        if email_message is None:
-            logger.warning("No new email found. Ending program.")
+        last_processed_id = get_last_processed_id()
+        unprocessed_emails = get_unprocessed_emails(mail, last_processed_id=last_processed_id)
+        
+        if not unprocessed_emails:
+            logger.info("No new emails to process. Ending program.")
             return
-        
-        email_content = parse_email_content(email_message)
-        logger.info(f"Full email content: {email_content}")
-        
-        user_info = extract_info(email_content)
-        logger.info(f"Extracted user info: {user_info}")
 
-        user_email = get_email_from_user_info(user_info)
-        if user_email is None:
-            logger.error("Email address not found in extracted user information")
-            return
-        
-        user_info['email'] = user_email
+        for email_id, email_message in unprocessed_emails:
+            try:
+                email_content = parse_email_content(email_message)
+                logger.info(f"Processing email with ID: {email_id}")
+                logger.info(f"Email content: {email_content}")
 
-        user_id = user_manager.create_or_update_user(user_info)
-        logger.info(f"User created/updated with ID: {user_id}")
+                user_info = extract_info(email_content)
+                logger.info(f"Extracted user info: {user_info}")
 
-        last_period_date = user_info['last_period_date']
-        cycle_length = int(user_info['cycle_length'])
-        period_duration = int(user_info['period_duration'])
-        calendar_type = user_info.get('calendar_service', '').lower() or 'ical'
+                user_email = get_email_from_user_info(user_info)
+                if user_email is None:
+                    logger.error("Email address not found in extracted user information")
+                    continue
 
-        phases = calculate_cycle(last_period_date, cycle_length, period_duration, num_months=12)
-        
-        calendar_url = create_calendar_file(phases, user_info, calendar_type, phase_descriptions, mantras)
-        logger.info(f"Calendar file created: {calendar_url}")
+                user_info['email'] = user_email
 
-        user_manager.update_user_calendar(user_email, calendar_type, calendar_url)
-        logger.info(f"User calendar information updated")
+                user_id = user_manager.create_or_update_user(user_info)
+                logger.info(f"User created/updated with ID: {user_id}")
 
-        send_email_to_user(user_email, calendar_url, user_info['name'], calendar_type)
-        logger.info(f"Email sent to {user_email} with calendar link")
+                last_period_date = user_info['last_period_date']
+                cycle_length = int(user_info['cycle_length'])
+                period_duration = int(user_info['period_duration'])
+                calendar_type = user_info.get('calendar_service', '').lower() or 'ical'
 
-        logger.info("Processing completed successfully")
+                phases = calculate_cycle(last_period_date, cycle_length, period_duration, num_months=12)
+                
+                calendar_url = create_calendar_file(phases, user_info, calendar_type, phase_descriptions, mantras)
+                logger.info(f"Calendar file created: {calendar_url}")
+
+                user_manager.update_user_calendar(user_email, calendar_type, calendar_url)
+                logger.info(f"User calendar information updated")
+
+                send_email_to_user(user_email, calendar_url, user_info['name'], calendar_type)
+                logger.info(f"Email sent to {user_email} with calendar link")
+
+                save_last_processed_id(email_id)
+                logger.info(f"Processed email with ID: {email_id}")
+
+            except Exception as e:
+                logger.error(f"Error processing email with ID {email_id}: {str(e)}", exc_info=True)
+
+        logger.info("All emails processed successfully")
     except Exception as e:
         logger.error(f"An error occurred during execution: {str(e)}", exc_info=True)
 
