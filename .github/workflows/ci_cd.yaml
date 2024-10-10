@@ -9,36 +9,51 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    services:
+      mongodb:
+        image: mongo
+        ports:
+          - 27017:27017
+
     steps:
     - uses: actions/checkout@v2
+
     - name: Set up Python 3.11
       uses: actions/setup-python@v2
       with:
         python-version: 3.11
+
     - uses: actions/cache@v2
       with:
         path: ~/.cache/pip
         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
         restore-keys: |
           ${{ runner.os }}-pip-
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip setuptools wheel
         pip install -r requirements.txt
+
     - name: Lint with flake8
       run: |
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics --exclude=env,.venv,venv
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics --exclude=env,.venv,venv
+
     - name: Check for vulnerabilities
       run: |
         pip install safety
         safety check --policy-file .safety-policy.yml
+
     - name: Run tests with coverage
       run: |
         pip install pytest-cov
         pytest --cov=./ --cov-report=xml
+
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v2
+
     - name: Deploy to staging
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       run: |
