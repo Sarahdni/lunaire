@@ -28,7 +28,8 @@ from .cycle_calculator import (
 def create_calendar_file(phases, user_info, calendar_type, phase_descriptions, mantras):
     try:
         print(f"Creating calendar file for type: {calendar_type}")
-        base_name = f"{user_info['name'].replace(' ', '_')}_calendar_12months"
+        base_name = f"Cycle Sync Calendar_{user_info['name'].replace(' ', '_')}"
+
         
         calendar_folder = os.path.join(os.getcwd(), 'calendars')
         os.makedirs(calendar_folder, exist_ok=True)

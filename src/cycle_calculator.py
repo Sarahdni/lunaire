@@ -52,42 +52,45 @@ def calculate_cycle(start_date, cycle_length, period_length, num_months=12):
 
 # Générer la description de chaque phase
 def generate_phase_description(phase_name, phase_info, mantra):
-    description = f"Mantra: {mantra}\n\n"
-    description += f"Phase: {phase_info['description']['phase_info']['text']}\n\n"
+    # Initialisation de la description avec le mantra
+    description = f"\n{' ' * 35}{phase_info['description']['phase_info']['text']}\n\n"
+    description += f"✨ {mantra} ✨\n\n"
+    
 
     # Recommandations sportives
-    description += "Sports recommendations:\n"
+    description += "\n🏋️‍♀️ Sports recommendations:\n"
     for sport in phase_info['description']['sports_recommendations']:
-        description += f"- {sport['text'] if isinstance(sport, dict) else sport}\n"
+        description += f"• {sport['text'] if isinstance(sport, dict) else sport}\n"
 
     # Recommandations nutritionnelles
-    description += "\nNutrition recommendations:\n"
+    description += "\n🍽️ Nutrition recommendations:\n"
     for food in phase_info['description']['nutrition']['recommended_foods']:
-        description += f"- {food['text'] if isinstance(food, dict) else food}\n"
+        description += f"• {food['text'] if isinstance(food, dict) else food}\n"
     
     # Aliments à éviter
-    description += "\nFoods to avoid:\n"
+    description += "\n🚫🍟 Foods to avoid:\n"
     for food in phase_info['description']['nutrition']['foods_to_avoid']:
-        description += f"- {food['text'] if isinstance(food, dict) else food}\n"
+        description += f"• {food['text'] if isinstance(food, dict) else food}\n"
 
     # Vitamines et suppléments
-    description += "\nVitamins & Supplements:\n"
+    description += "\n💊 Vitamins & Supplements:\n"
     for vitamin in phase_info['description']['vitamins_supplements']:
-        description += f"- {vitamin['text'] if isinstance(vitamin, dict) else vitamin}\n"
+        description += f"• {vitamin['text'] if isinstance(vitamin, dict) else vitamin}\n"
 
     # Seed cycling
     seed_cycling = phase_info['description'].get('seed_cycling', None)
     if seed_cycling:
-        description += "\nSeed Cycling:\n"
-        description += f"- Seeds: {', '.join(seed_cycling['seeds'])}\n"
-        description += f"- Benefits: {seed_cycling['benefits']} ({seed_cycling.get('link', 'No link')})\n"
+        description += "\n🌻 Seed Cycling:\n"
+        description += f"Include {', '.join(seed_cycling['seeds'])}\n"
+        description += f"Benefits: {seed_cycling['benefits']}\n"
 
     # Astuces de soins personnels
-    description += "\nSelf-Care Tips:\n"
+    description += "\n🧘‍♀️ Self-Care Tips:\n"
     for tip in phase_info['description']['self_care_tips']:
-        description += f"- {tip['text'] if isinstance(tip, dict) else tip}\n"
+        description += f"• {tip['text'] if isinstance(tip, dict) else tip}\n"
     
     return description
+
 
 # Créer un événement pour un calendrier donné
 def create_event(phase_name, start, end, phase_info, mantras, format='ical'):

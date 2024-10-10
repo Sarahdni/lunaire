@@ -3,7 +3,7 @@
       "title": "❄️ Winter flow | Calm and introspection",
       "description": {
         "mantra": "from mantras_list.py",
-        "phase_info": {"text": "Menstrual phase", "link": "https://www.example.com/menstrual-info"},
+        "phase_info": {"text": "❄️ Menstrual phase", "link": "https://www.example.com/menstrual-info"},
         "sports_recommendations": [
           {"text": "Gentle yoga", "link": "https://www.example.com/gentle-yoga"},
           "Stretching",
@@ -44,7 +44,7 @@
       "title": "🌱 Spring awakening | Growth and potential",
       "description": {
         "mantra": "from mantras_list.py",
-        "phase_info": {"text": "Follicular phase", "link": "https://www.example.com/follicular-info"},
+        "phase_info": {"text": "🌱 Follicular phase", "link": "https://www.example.com/follicular-info"},
         "sports_recommendations": [
           {"text": "Cardio exercises", "link": "https://www.example.com/cardio-exercises"},
           "Strength training",
@@ -85,7 +85,7 @@
       "title": "☀️ Summer bloom | Peak energy and confidence",
       "description": {
         "mantra": "from mantras_list.py",
-        "phase_info": {"text": "Ovulatory phase", "link": "https://www.example.com/ovulatory-info"},
+        "phase_info": {"text": "☀️ Ovulatory phase", "link": "https://www.example.com/ovulatory-info"},
         "sports_recommendations": [
           {"text": "High-intensity workouts", "link": "https://www.example.com/high-intensity-workouts"},
           "Team sports",
@@ -111,8 +111,7 @@
         ],
         "seed_cycling": {
           "seeds": ["Sunflower seeds", "Sesame seeds"],
-          "benefits": "Supports progesterone production for the upcoming luteal phase",
-          "link": "https://www.example.com/seed-cycling-guide"
+          "benefits": "Supports progesterone production for the upcoming luteal phase"
         },
         "self_care_tips": [
           {"text": "Engage in social activities", "link": "https://www.example.com/social-wellbeing"},
@@ -126,7 +125,7 @@
       "title": "🍂 Autumn nesting | Slowing down and preparing",
       "description": {
         "mantra": "from mantras_list.py",
-        "phase_info": {"text": "Luteal phase", "link": "https://www.example.com/luteal-info"},
+        "phase_info": {"text": "🍂 Luteal phase", "link": "https://www.example.com/luteal-info"},
         "sports_recommendations": [
           {"text": "Pilates", "link": "https://www.example.com/pilates-benefits"},
           "Swimming",
