@@ -34,9 +34,13 @@ def get_mantra(phase, date, mantras):
 
 def calculate_cycle(start_date, cycle_length, period_length, num_months=12):
     if isinstance(start_date, str):
-        start_date = datetime.datetime.strptime(start_date, "%d/%m/%Y")
-    elif not isinstance(start_date, datetime.datetime):
-        raise ValueError("start_date must be a string in format 'dd/mm/yyyy' or a datetime object")
+        try:
+            start_date = datetime.datetime.strptime(start_date, "%Y-%m-%d")
+        except ValueError:
+            try:
+                start_date = datetime.datetime.strptime(start_date, "%d/%m/%Y")
+            except ValueError:
+                raise ValueError("Invalid date format. Expected 'YYYY-MM-DD' or 'DD/MM/YYYY'")
     
     all_phases = []
     current_date = start_date
@@ -51,6 +55,7 @@ def calculate_cycle(start_date, cycle_length, period_length, num_months=12):
         all_phases.extend(phases)
         current_date = cycle_end
     return all_phases
+
 
 def create_ical(phases, user_info, phase_descriptions, mantras):
     cal = Calendar()

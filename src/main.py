@@ -74,28 +74,20 @@ def main():
         user_info['email'] = user_email  # Add email to user_info dictionary
         
         user_id = user_manager.create_or_update_user(user_info)
-        logger.info(f"User database created/updated: {user_id}")
+        logger.info(f"User created/updated with ID: {user_id}")
 
-        try:
-            cycle_start = datetime.strptime(user_info['last_period_date'], "%Y-%m-%d")
-            cycle_length = int(user_info['cycle_length'])
-            period_length = int(user_info['period_duration'])
-            calendar_type = user_info.get('calendar_service', '').lower() or 'ical'  # Default to 'ical' if not specified
-        except KeyError as e:
-            logger.error(f"Missing data in user information: {str(e)}")
-            raise ValueError(f"Incomplete user data: {str(e)}")
-        except ValueError as e:
-            logger.error(f"Error converting user data: {str(e)}")
-            raise ValueError(f"Invalid user data: {str(e)}")
+        last_period_date = user_info['last_period_date']
+        cycle_length = int(user_info['cycle_length'])
+        period_duration = int(user_info['period_duration'])
+        calendar_type = user_info.get('calendar_service', '').lower() or 'ical'  # Default to 'ical' if not specified
 
-        phases = calculate_cycle(cycle_start, cycle_length, period_length, num_months=12)
+        phases = calculate_cycle(last_period_date, cycle_length, period_duration, num_months=12)
         
         calendar_url = create_calendar_file(phases, user_info, calendar_type, phase_descriptions, mantras)
         logger.info(f"Calendar file created: {calendar_url}")
 
-        cycle_id = cycle_manager.save_cycle_data(user_email, {"phases": phases})
-        calendar_id = calendar_manager.save_calendar_data(user_email, {"calendar_url": calendar_url, "calendar_type": calendar_type})
-        logger.info(f"Cycle and calendar data saved. IDs: {cycle_id}, {calendar_id}")
+        user_manager.update_user_calendar(user_email, calendar_type, calendar_url)
+        logger.info(f"User calendar information updated")
 
         send_email_to_user(user_email, calendar_url, user_info['name'], calendar_type)
         logger.info(f"Email sent to {user_email} with calendar link")
@@ -103,6 +95,7 @@ def main():
         logger.info("Processing completed successfully")
     except Exception as e:
         logger.error(f"An error occurred during execution: {str(e)}", exc_info=True)
+
 
 if __name__ == "__main__":
     main()
