@@ -9,6 +9,7 @@ from . import (
     extract_info,
     send_email_to_user,
     get_last_processed_id,
+    save_last_processed_id,
     user_manager, 
     cycle_manager, 
     calendar_manager
