@@ -1,4 +1,4 @@
-from pymongo.errors import OperationFailure
+from pymongo.errors import DuplicateKeyError
 import logging
 from datetime import datetime
 
@@ -7,47 +7,73 @@ logger = logging.getLogger(__name__)
 class UserManager:
     def __init__(self, db_manager):
         self.db_manager = db_manager
+        self.users_collection = self.db_manager.users_collection
 
     def create_or_update_user(self, user_info):
-        if 'email' not in user_info:
-            raise ValueError("Email is required for user creation/update")
-
-        db = self.db_manager.get_user_db(user_info['email'])
-        users_collection = db.users
-
         user_data = {
             "name": user_info.get('name', 'Unknown'),
             "email": user_info['email'],
-            "age": user_info.get('age', user_info.get('what is your age', 'Unknown')),
-            "country": user_info.get('country', user_info.get('which country do you live in?', 'Unknown')),
-            "last_period_date": self._parse_date(user_info.get('last_period_date', user_info.get('when did your last period start?'))),
-            "period_duration": int(user_info.get('period_duration', user_info.get('how long does your period typically last?', 0))),
-            "cycle_length": int(user_info.get('cycle_length', user_info.get("what's the average length of your menstrual cycle?", 28))),
-            "calendar_service": user_info.get('calendar_service', user_info.get('which calendar service would you like to use?', 'Unknown'))
+            "age": user_info.get('age', 'Unknown'),
+            "country": user_info.get('country', 'Unknown'),
+            "cycle_info": {
+                "last_period_date": datetime.strptime(user_info.get('last_period_date', ''), "%Y-%m-%d"),
+                "period_duration": int(user_info.get('period_duration', 0)),
+                "cycle_length": int(user_info.get('cycle_length', 28))
+            },
+            "calendar_info": {
+                "calendar_type": user_info.get('calendar_service', ''),
+                "calendar_url": user_info.get('calendar_url', '')
+            },
+            "updated_at": datetime.utcnow()
         }
 
         try:
-            result = users_collection.update_one(
+            result = self.users_collection.update_one(
                 {"email": user_info['email']},
-                {"$set": user_data},
+                {"$set": user_data, "$setOnInsert": {"created_at": datetime.utcnow()}},
                 upsert=True
             )
             if result.upserted_id:
                 logger.info(f"New user created with ID: {result.upserted_id}")
+                return str(result.upserted_id)
             else:
                 logger.info(f"Existing user updated with email: {user_info['email']}")
-
-            self.db_manager.ensure_collections_exist(db)
-            return str(result.upserted_id or result.modified_count)
-        except OperationFailure as e:
+                return str(result.modified_count)
+        except DuplicateKeyError:
+            logger.error(f"Duplicate email: {user_info['email']}")
+            raise
+        except Exception as e:
             logger.error(f"Error creating/updating user: {e}")
             raise
 
-    def _parse_date(self, date_string):
-        if not date_string:
-            return None
-        try:
-            return datetime.strptime(date_string.split('T')[0], "%Y-%m-%d")
-        except ValueError:
-            logger.warning(f"Invalid date format: {date_string}. Using None.")
-            return None
+    def get_user_by_email(self, email):
+        return self.users_collection.find_one({"email": email})
+
+    def update_user_calendar(self, email, calendar_type, calendar_url):
+        result = self.users_collection.update_one(
+            {"email": email},
+            {
+                "$set": {
+                    "calendar_info.calendar_type": calendar_type,
+                    "calendar_info.calendar_url": calendar_url,
+                    "updated_at": datetime.utcnow()
+                }
+            }
+        )
+        return result.modified_count
+
+    def update_user_cycle(self, email, last_period_date, period_duration, cycle_length):
+        result = self.users_collection.update_one(
+            {"email": email},
+            {
+                "$set": {
+                    "cycle_info.last_period_date": datetime.strptime(last_period_date, "%Y-%m-%d"),
+                    "cycle_info.period_duration": int(period_duration),
+                    "cycle_info.cycle_length": int(cycle_length),
+                    "updated_at": datetime.utcnow()
+                }
+            }
+        )
+        return result.modified_count
+
+ 
