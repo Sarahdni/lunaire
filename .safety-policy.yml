@@ -1,3 +1,4 @@
-ignore-vulnerabilities:
-  70612:
-    reason: "Faux positif"
+security:
+  ignore-vulnerabilities:
+    70612:
+      reason: "Faux positif"
