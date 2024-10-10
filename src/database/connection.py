@@ -8,6 +8,9 @@ logger = logging.getLogger(__name__)
 class DatabaseManager:
     def __init__(self):
         self.client = self._initialize_database()
+        self.db = self.client['LUNAIRE']
+        self.users_collection = self.db['users']
+        self._ensure_collection_exists()
 
     @staticmethod
     def _initialize_database():
@@ -24,16 +27,17 @@ class DatabaseManager:
             logger.error(f"Error connecting to MongoDB: {e}")
             raise
 
-    def get_user_db(self, email):
-        db_name = f"user_{email.replace('@', '_').replace('.', '_')}"
-        return self.client[db_name]
+    def _ensure_collection_exists(self):
+        if 'users' not in self.db.list_collection_names():
+            self.db.create_collection('users')
+            logger.info("Collection 'users' created in LUNAIRE database")
+        else:
+            logger.debug("Collection 'users' already exists in LUNAIRE database")
 
-    @staticmethod
-    def ensure_collections_exist(db):
-        collections_to_create = ["users", "cycles", "calendars"]
-        for collection_name in collections_to_create:
-            if collection_name not in db.list_collection_names():
-                db.create_collection(collection_name)
-                logger.info(f"Collection {collection_name} created in {db.name}")
-            else:
-                logger.debug(f"Collection {collection_name} already exists in {db.name}")
+    def create_index(self):
+        self.users_collection.create_index("email", unique=True)
+        logger.info("Unique index on 'email' created for 'users' collection")
+
+    def close_connection(self):
+        self.client.close()
+        logger.info("MongoDB connection closed")
