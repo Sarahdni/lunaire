@@ -1,6 +1,9 @@
 import imaplib
 import email
 from config import EMAIL, EMAIL_PASSWORD, IMAP_SERVER, NOTIFICATION_EMAIL
+from bs4 import BeautifulSoup
+import re
+from datetime import datetime
 
 def connect_to_email():
     try:
@@ -40,10 +43,38 @@ def parse_email_content(email_message):
         return email_message.get_payload(decode=True).decode()
 
 def extract_info(email_content):
-    lines = email_content.split('\n')
+    soup = BeautifulSoup(email_content, 'html.parser')
     info = {}
-    for line in lines:
-        if ':' in line:
-            key, value = line.split(':', 1)
-            info[key.strip()] = value.strip()
+
+    # Extraire les informations des balises <b> et <i>
+    for b_tag in soup.find_all('b'):
+        key = b_tag.text.strip().replace(':', '').lower()
+        if key == "welcome {{slide:9ximado}}, what's your email address":
+            key = 'email'
+        i_tag = b_tag.find_next('i')
+        if i_tag:
+            value = i_tag.text.strip()
+            if 'Entered Text:' in value:
+                value = value.replace('Entered Text:', '').strip()
+            info[key] = value
+        else:
+            # Pour les choix multiples
+            next_tag = b_tag.find_next()
+            if next_tag and next_tag.name != 'b':
+                info[key] = next_tag.text.strip()
+
+    # Traitement spécial pour certains champs
+    if "what's your name?" in info:
+        info['name'] = info.pop("what's your name?")
+    if 'when did your last period start?' in info:
+        date_str = info['when did your last period start?']
+        info['last_period_date'] = datetime.strptime(date_str, "%Y-%m-%dT%H:%M:%S.%fZ").strftime("%Y-%m-%d")
+    if 'how long does your period typically last?' in info:
+        info['period_duration'] = int(info['how long does your period typically last?'])
+    if "what's the average length of your menstrual cycle?" in info:
+        info['cycle_length'] = int(info["what's the average length of your menstrual cycle?"])
+    if 'which calendar service would you like to use?' in info:
+        info['calendar_service'] = info['which calendar service would you like to use?']
+
+    print("Extracted info:", info)
     return info

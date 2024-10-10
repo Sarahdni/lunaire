@@ -42,11 +42,17 @@ def main():
             return
         
         email_content = parse_email_content(email_message)
+        logger.info(f"Full email content: {email_content}")
+
         user_info = extract_info(email_content)
-        logger.info(f"Processing data for user: {user_info.get('name', 'Unknown')}")
+        logger.info(f"Extracted user info: {user_info}")
 
         user_id = user_manager.create_or_update_user(user_info)
         logger.info(f"User database created/updated: {user_id}")
+
+        if 'email' not in user_info:
+            logger.error("Email address not found in extracted user information")
+            return
 
         try:
             cycle_start = datetime.strptime(user_info['last_period_date'], "%Y-%m-%dT%H:%M:%S.%fZ")
