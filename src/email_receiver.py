@@ -46,11 +46,11 @@ def extract_info(email_content):
     soup = BeautifulSoup(email_content, 'html.parser')
     info = {}
 
-    # Extraire les informations des balises <b> et <i>
     for b_tag in soup.find_all('b'):
         key = b_tag.text.strip().replace(':', '').lower()
         if key == "welcome {{slide:9ximado}}, what's your email address":
             key = 'email'
+        
         i_tag = b_tag.find_next('i')
         if i_tag:
             value = i_tag.text.strip()
@@ -58,7 +58,6 @@ def extract_info(email_content):
                 value = value.replace('Entered Text:', '').strip()
             info[key] = value
         else:
-            # Pour les choix multiples
             next_tag = b_tag.find_next()
             if next_tag and next_tag.name != 'b':
                 info[key] = next_tag.text.strip()
@@ -66,15 +65,33 @@ def extract_info(email_content):
     # Traitement spécial pour certains champs
     if "what's your name?" in info:
         info['name'] = info.pop("what's your name?")
+
     if 'when did your last period start?' in info:
         date_str = info['when did your last period start?']
         info['last_period_date'] = datetime.strptime(date_str, "%Y-%m-%dT%H:%M:%S.%fZ").strftime("%Y-%m-%d")
+
     if 'how long does your period typically last?' in info:
         info['period_duration'] = int(info['how long does your period typically last?'])
+
     if "what's the average length of your menstrual cycle?" in info:
         info['cycle_length'] = int(info["what's the average length of your menstrual cycle?"])
-    if 'which calendar service would you like to use?' in info:
-        info['calendar_service'] = info['which calendar service would you like to use?']
 
-    print("Extracted info:", info)
+    # Traitement spécial pour le service de calendrier
+    calendar_key = 'which calendar service would you like to use?'
+    if calendar_key in info:
+        calendar_value = info[calendar_key].lower()
+        print(f"Raw calendar value: {calendar_value}")
+        if 'google' in calendar_value:
+            info['calendar_service'] = 'google'
+        elif 'outlook' in calendar_value:
+            info['calendar_service'] = 'outlook'
+        elif 'apple' in calendar_value:
+            info['calendar_service'] = 'apple'
+        else:
+            info['calendar_service'] = 'ical'
+    else:
+        info['calendar_service'] = 'ical'  # Valeur par défaut
+    
+    print(f"Final calendar service: {info['calendar_service']}")
+
     return info

@@ -13,9 +13,10 @@ def send_email_to_user(user_email, calendar_url, user_name, calendar_type):
     msg['Subject'] = "Your 12-month personalized menstrual calendar"
 
     calendar_instructions = {
-        "ical": "Open the .ics file with your preferred calendar application.",
-        "google": "Import the CSV file into Google Calendar by going to Settings > Import and export.",
-        "outlook": "Import the CSV file into Outlook by going to File > Open & Export > Import/Export."
+    "ical": "Open the .ics file with your preferred calendar application.",
+    "apple": "Open the .ics file with Apple Calendar.",
+    "google": "Import the CSV file into Google Calendar by going to Settings > Import & Export.",
+    "outlook": "Import the CSV file into Outlook by going to File > Open & Export > Import/Export."
     }
 
     body = f"""
