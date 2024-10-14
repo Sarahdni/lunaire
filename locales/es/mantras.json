@@ -1,0 +1,256 @@
+{
+    "Menstrual": {
+        "January": [
+            "Comienzo: Acepto este tiempo de descanso y renovación.",
+            "Medio: Escucho profundamente la sabiduría de mi cuerpo.",
+            "Fin: Libero lo viejo y doy la bienvenida a lo nuevo."
+        ],
+        "February": [
+            "Comienzo: Honro los ritmos naturales de mi cuerpo.",
+            "Medio: Encuentro fortaleza en la quietud y la introspección.",
+            "Fin: Me preparo para el surgimiento de una nueva energía."
+        ],
+        "March": [
+            "Comienzo: Me permito el descanso que necesito para renacer.",
+            "Medio: Cultivo paciencia y amabilidad conmigo misma.",
+            "Fin: Me renuevo con la llegada de la primavera."
+        ],
+        "April": [
+            "Comienzo: Abrazo la energía nutritiva de esta fase.",
+            "Medio: Estoy centrada y conectada conmigo misma.",
+            "Fin: Honro la sabiduría de mi cuerpo cíclico."
+        ],
+        "May": [
+            "Comienzo: Confío en el poder curativo del descanso.",
+            "Medio: Estoy en sintonía con las necesidades y deseos de mi cuerpo.",
+            "Fin: Acepto la transformación y el crecimiento."
+        ],
+        "June": [
+            "Comienzo: Encuentro paz al reducir la velocidad y mirar hacia adentro.",
+            "Medio: Nutro mi cuerpo y alma con cuidado amoroso.",
+            "Fin: Estoy abierta a los conocimientos que trae esta fase."
+        ],
+        "July": [
+            "Comienzo: Acepto la fuerza tranquila de mi mundo interior.",
+            "Medio: Libero lo que ya no me sirve.",
+            "Fin: Estoy agradecida por los ciclos naturales de mi cuerpo."
+        ],
+        "August": [
+            "Comienzo: Honro este tiempo de retiro y reflexión.",
+            "Medio: Soy gentil y compasiva conmigo misma.",
+            "Fin: Confío en la sabiduría de mi cuerpo."
+        ],
+        "September": [
+            "Comienzo: Encuentro renovación en el descanso y la soledad.",
+            "Medio: Escucho los susurros de mi intuición.",
+            "Fin: Me preparo para un nuevo ciclo con esperanza y claridad."
+        ],
+        "October": [
+            "Comienzo: Acepto el poder transformador de esta fase.",
+            "Medio: Encuentro fortaleza en la vulnerabilidad y la autenticidad.",
+            "Fin: Estoy alineada con los ciclos de la naturaleza y de mi cuerpo."
+        ],
+        "November": [
+            "Comienzo: Honro la sabiduría de mi cuerpo cíclico.",
+            "Medio: Encuentro consuelo al reducir la velocidad y mirar hacia adentro.",
+            "Fin: Libero lo viejo para hacer espacio para lo nuevo."
+        ],
+        "December": [
+            "Comienzo: Abrazo este tiempo de descanso sagrado y renovación.",
+            "Medio: Estoy agradecida por las lecciones que me enseña mi cuerpo.",
+            "Fin: Cierro este año con profundo respeto por la sabiduría de mi cuerpo."
+        ]
+    },
+    "Follicular": {
+        "January": [
+            "Comienzo: Estoy lista para nutrir nuevas ideas y proyectos.",
+            "Medio: Cada día me vuelvo más fuerte y más segura.",
+            "Fin: Me abro a las infinitas posibilidades que se presentan ante mí."
+        ],
+        "February": [
+            "Comienzo: Planto las semillas de mi éxito futuro.",
+            "Medio: Mi creatividad florece más cada día.",
+            "Fin: Estoy en pleno crecimiento, como la naturaleza que despierta."
+        ],
+        "March": [
+            "Comienzo: Me alineo con la energía creciente de la primavera.",
+            "Medio: Acojo con entusiasmo nuevas oportunidades.",
+            "Fin: Estoy lista para florecer plenamente."
+        ],
+        "April": [
+            "Comienzo: Abrazo la energía fresca de los nuevos comienzos.",
+            "Medio: Mi potencial es ilimitado y está en expansión.",
+            "Fin: Estoy en perfecta armonía con el ritmo de la vida."
+        ],
+        "May": [
+            "Comienzo: Estoy llena de vitalidad y energía creativa.",
+            "Medio: Nutro mis sueños con positividad y acción.",
+            "Fin: Estoy floreciendo en mi máximo potencial."
+        ],
+        "June": [
+            "Comienzo: Doy la bienvenida a la luz creciente dentro y alrededor de mí.",
+            "Medio: Mi fuerza interior y confianza están floreciendo.",
+            "Fin: Estoy lista para hacer brillar mi luz en el mundo."
+        ],
+        "July": [
+            "Comienzo: Estoy abierta a nuevas experiencias y crecimiento.",
+            "Medio: Mi energía está aumentando, alimentando mis sueños y objetivos.",
+            "Fin: Me estoy convirtiendo en la mejor versión de mí misma."
+        ],
+        "August": [
+            "Comienzo: Acojo la abundancia de oportunidades a mi alrededor.",
+            "Medio: Mi creatividad e inspiración están en su apogeo.",
+            "Fin: Estoy lista para manifestar los deseos de mi corazón."
+        ],
+        "September": [
+            "Comienzo: Doy la bienvenida a los nuevos comienzos con los brazos abiertos.",
+            "Medio: Mi sabiduría interior me guía hacia el crecimiento y el éxito.",
+            "Fin: Me estoy preparando para cosechar los frutos de mis esfuerzos."
+        ],
+        "October": [
+            "Comienzo: Acepto el cambio como un catalizador para el crecimiento.",
+            "Medio: Mi fuego interior está aumentando, alimentando mi pasión y determinación.",
+            "Fin: Estoy lista para entrar en mi poder y potencial."
+        ],
+        "November": [
+            "Comienzo: Planto las semillas de nuevas intenciones y sueños.",
+            "Medio: Mi energía está aumentando, trayendo claridad y enfoque.",
+            "Fin: Estoy alineada con mis objetivos y avanzando con confianza."
+        ],
+        "December": [
+            "Comienzo: Doy la bienvenida al renacimiento de mi energía y aspiraciones.",
+            "Medio: Estoy tomando impulso para el año que viene.",
+            "Fin: Estoy lista para saltar a nuevas posibilidades y aventuras."
+        ]
+    },
+    "Ovulatory": {
+        "January": [
+            "Comienzo: Irradio confianza y energía positiva.",
+            "Medio: Atraigo naturalmente maravillosas oportunidades.",
+            "Fin: Estoy en el apogeo de mi creatividad y autoexpresión."
+        ],
+        "February": [
+            "Comienzo: Abrazo plenamente mi feminidad y poder.",
+            "Medio: Soy una fuente de inspiración para mí misma y para los demás.",
+            "Fin: Manifiesto mis deseos con claridad y seguridad."
+        ],
+        "March": [
+            "Comienzo: Estoy en perfecta armonía con mi cuerpo y mente.",
+            "Medio: Encarnaré la alegría y vitalidad de la primavera.",
+            "Fin: Soy una fuerza de la naturaleza, poderosa y hermosa."
+        ],
+        "April": [
+            "Comienzo: Soy magnética, atrayendo positividad y éxito.",
+            "Medio: Mi energía es contagiosa, inspirando a quienes me rodean.",
+            "Fin: Soy imparable en la búsqueda de mis pasiones y sueños."
+        ],
+        "May": [
+            "Comienzo: Florezco con confianza y seguridad en mí misma.",
+            "Medio: Mi luz interior brilla para que todos la vean.",
+            "Fin: Estoy en el apogeo de mi poder y potencial personal."
+        ],
+        "June": [
+            "Comienzo: Irradio alegría y vitalidad en todo lo que hago.",
+            "Medio: Soy un faro de energía positiva e inspiración.",
+            "Fin: Manifiesto sin esfuerzo mis deseos e intenciones."
+        ],
+        "July": [
+            "Comienzo: Soy una expresión radiante del poder femenino.",
+            "Medio: Mi confianza y carisma están en su apogeo.",
+            "Fin: Atraigo abundancia y oportunidades positivas."
+        ],
+        "August": [
+            "Comienzo: Encarnó el calor y la vitalidad del verano.",
+            "Medio: Mi creatividad y pasión están en plena floración.",
+            "Fin: Soy un imán para el amor, el éxito y el cumplimiento."
+        ],
+        "September": [
+            "Comienzo: Estoy en la cima de mi poder personal.",
+            "Medio: Mi energía es magnética, atrayendo positividad.",
+            "Fin: Comparto mis dones con el mundo con confianza."
+        ],
+        "October": [
+            "Comienzo: Irradio confianza y fuerza interior.",
+            "Medio: Mi intuición y sabiduría están afinadas.",
+            "Fin: Soy una creadora poderosa de mi propia realidad."
+        ],
+        "November": [
+            "Comienzo: Abrazo plenamente mi feminidad y mi poder.",
+            "Medio: Mi energía es una luz que me guía hacia el éxito.",
+            "Fin: Estoy alineada con mi máximo potencial y propósito."
+        ],
+        "December": [
+            "Comienzo: Brillo intensamente, iluminando el camino para otros.",
+            "Medio: Mi confianza y encanto son irresistibles.",
+            "Fin: Termino el año en el apogeo de mi poder personal."
+        ]
+    },
+    "Luteal": {
+        "January": [
+            "Comienzo: Acojo mis emociones con compasión y comprensión.",
+            "Medio: Encuentro el equilibrio entre la acción y la reflexión.",
+            "Fin: Me preparo suavemente para un nuevo ciclo."
+        ],
+        "February": [
+            "Comienzo: Transformo los desafíos en oportunidades de crecimiento.",
+            "Medio: Cultivo paciencia y amabilidad conmigo misma.",
+            "Fin: Honro los cambios dentro de mí con gracia."
+        ],
+        "March": [
+            "Comienzo: Me conecto con mi sabiduría interior para obtener orientación.",
+            "Medio: Acojo las lecciones de esta fase con gratitud.",
+            "Fin: Estoy en paz con los altibajos de mi ciclo."
+        ],
+        "April": [
+            "Comienzo: Abrazo la energía introspectiva de esta fase.",
+            "Medio: Encuentro fortaleza al reducir la velocidad y mirar hacia adentro.",
+            "Fin: Me preparo para la renovación con esperanza y aceptación."
+        ],
+        "May": [
+            "Comienzo: Honro mi necesidad de descanso y cuidado personal.",
+            "Medio: Confío en la sabiduría de mi cuerpo y mis emociones.",
+            "Fin: Libero lo que ya no me sirve con gratitud."
+        ],
+        "June": [
+            "Comienzo: Encuentro un equilibrio entre la actividad y el descanso.",
+            "Medio: Me nutro con compasión y comprensión.",
+            "Fin: Estoy agradecida por las perspectivas ganadas durante esta fase."
+        ],
+        "July": [
+            "Comienzo: Abrazo el poder transformador de esta fase.",
+            "Medio: Escucho profundamente las necesidades y la sabiduría de mi cuerpo.",
+            "Fin: Me preparo para un nuevo ciclo con claridad e intención."
+        ],
+        "August": [
+            "Comienzo: Honro mis emociones como mensajeras de sabiduría.",
+            "Medio: Encuentro fortaleza en la vulnerabilidad y la autenticidad.",
+            "Fin: Estoy alineada con los ritmos naturales de mi cuerpo."
+        ],
+        "September": [
+            "Comienzo: Acojo la sabiduría tranquila de este tiempo introspectivo.",
+            "Medio: Practico la autocompasión y el cuidado personal suave.",
+            "Fin: Me preparo para un nuevo comienzo con esperanza y claridad."
+        ],
+        "October": [
+            "Comienzo: Abrazo la energía transformadora del otoño.",
+            "Medio: Encuentro belleza y sabiduría en los cambios dentro de mí.",
+            "Fin: Libero lo viejo para hacer espacio para el nuevo crecimiento."
+        ],
+        "November": [
+            "Comienzo: Honro la sabiduría de los ciclos naturales de mi cuerpo.",
+            "Medio: Encuentro fortaleza al reducir la velocidad y mirar hacia adentro.",
+            "Fin: Me preparo para la renovación con paciencia y amor propio."
+        ],
+        "December": [
+            "Comienzo: Abrazo este tiempo de reflexión e integración.",
+            "Medio: Estoy agradecida por las lecciones aprendidas a lo largo del año.",
+            "Fin: Termino este ciclo con profundo respeto por la sabiduría de mi cuerpo."
+        ]
+    }
+}
+
+
+
+    
+       
+    

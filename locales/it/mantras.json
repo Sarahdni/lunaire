@@ -1,0 +1,251 @@
+{
+    "Menstrual": {
+        "January": [
+            "Inizio: Accolgo questo periodo di riposo e rinnovamento.",
+            "Metà: Ascolto profondamente la saggezza del mio corpo.",
+            "Fine: Lascio andare il vecchio e accolgo il nuovo."
+        ],
+        "February": [
+            "Inizio: Onoro i ritmi naturali del mio corpo.",
+            "Metà: Trovo forza nella tranquillità e nell'introspezione.",
+            "Fine: Mi preparo per l'emergere di una nuova energia."
+        ],
+        "March": [
+            "Inizio: Mi permetto il riposo di cui ho bisogno per rinascere.",
+            "Metà: Coltivo pazienza e dolcezza verso me stessa.",
+            "Fine: Mi rinnovo con l'arrivo della primavera."
+        ],
+        "April": [
+            "Inizio: Accolgo l'energia nutritiva di questa fase.",
+            "Metà: Sono radicata e centrata dentro di me.",
+            "Fine: Onoro la saggezza del mio corpo ciclico."
+        ],
+        "May": [
+            "Inizio: Mi fido del potere curativo del riposo.",
+            "Metà: Sono in sintonia con i bisogni e i desideri del mio corpo.",
+            "Fine: Accolgo la trasformazione e la crescita."
+        ],
+        "June": [
+            "Inizio: Trovo pace rallentando e guardando dentro di me.",
+            "Metà: Nutro il mio corpo e la mia anima con amorevole cura.",
+            "Fine: Sono aperta agli insegnamenti che questa fase porta."
+        ],
+        "July": [
+            "Inizio: Accolgo la forza tranquilla del mio mondo interiore.",
+            "Metà: Lascio andare ciò che non mi serve più.",
+            "Fine: Sono grata per i cicli naturali del mio corpo."
+        ],
+        "August": [
+            "Inizio: Onoro questo tempo di ritiro e riflessione.",
+            "Metà: Sono gentile e compassionevole con me stessa.",
+            "Fine: Mi fido della saggezza del mio corpo."
+        ],
+        "September": [
+            "Inizio: Trovo rinnovamento nel riposo e nella solitudine.",
+            "Metà: Ascolto i sussurri della mia intuizione.",
+            "Fine: Mi preparo per un nuovo ciclo con speranza e chiarezza."
+        ],
+        "October": [
+            "Inizio: Accolgo il potere trasformativo di questa fase.",
+            "Metà: Trovo forza nella vulnerabilità e nell'autenticità.",
+            "Fine: Sono in armonia con i cicli della natura e del mio corpo."
+        ],
+        "November": [
+            "Inizio: Onoro la saggezza del mio corpo ciclico.",
+            "Metà: Trovo conforto rallentando e guardando dentro di me.",
+            "Fine: Lascio andare il vecchio per far spazio al nuovo."
+        ],
+        "December": [
+            "Inizio: Accolgo questo periodo di sacro riposo e rinnovamento.",
+            "Metà: Sono grata per le lezioni che il mio corpo mi insegna.",
+            "Fine: Chiudo quest'anno con profondo rispetto per la saggezza del mio corpo."
+        ]
+    },
+    "Follicular": {
+        "January": [
+            "Inizio: Sono pronta a nutrire nuove idee e progetti.",
+            "Metà: Ogni giorno divento più forte e sicura di me.",
+            "Fine: Mi apro alle infinite possibilità che mi si presentano."
+        ],
+        "February": [
+            "Inizio: Pianto i semi del mio futuro successo.",
+            "Metà: La mia creatività fiorisce ogni giorno di più.",
+            "Fine: Sono in piena crescita, come la natura che si risveglia."
+        ],
+        "March": [
+            "Inizio: Mi allineo con l'energia crescente della primavera.",
+            "Metà: Accolgo con entusiasmo nuove opportunità.",
+            "Fine: Sono pronta a fiorire completamente."
+        ],
+        "April": [
+            "Inizio: Accolgo l'energia fresca di nuovi inizi.",
+            "Metà: Il mio potenziale è illimitato e in espansione.",
+            "Fine: Sono in perfetta armonia con il ritmo della vita."
+        ],
+        "May": [
+            "Inizio: Sono piena di vitalità ed energia creativa.",
+            "Metà: Nutro i miei sogni con positività e azione.",
+            "Fine: Sto fiorendo nel mio massimo potenziale."
+        ],
+        "June": [
+            "Inizio: Accolgo la luce crescente dentro e intorno a me.",
+            "Metà: La mia forza interiore e la mia fiducia stanno fiorendo.",
+            "Fine: Sono pronta a far brillare la mia luce nel mondo."
+        ],
+        "July": [
+            "Inizio: Sono aperta a nuove esperienze e crescita.",
+            "Metà: La mia energia sta crescendo, alimentando i miei sogni e obiettivi.",
+            "Fine: Sto diventando la migliore versione di me stessa."
+        ],
+        "August": [
+            "Inizio: Accolgo l'abbondanza di opportunità intorno a me.",
+            "Metà: La mia creatività e ispirazione sono al loro apice.",
+            "Fine: Sono pronta a manifestare i desideri del mio cuore."
+        ],
+        "September": [
+            "Inizio: Accolgo i nuovi inizi a braccia aperte.",
+            "Metà: La mia saggezza interiore mi guida verso crescita e successo.",
+            "Fine: Mi preparo a raccogliere i frutti dei miei sforzi."
+        ],
+        "October": [
+            "Inizio: Accolgo il cambiamento come catalizzatore di crescita.",
+            "Metà: Il mio fuoco interiore sta crescendo, alimentando la mia passione e determinazione.",
+            "Fine: Sono pronta a entrare nel mio potere e potenziale."
+        ],
+        "November": [
+            "Inizio: Pianto i semi di nuove intenzioni e sogni.",
+            "Metà: La mia energia sta crescendo, portando chiarezza e concentrazione.",
+            "Fine: Sono allineata con i miei obiettivi e avanzo con fiducia."
+        ],
+        "December": [
+            "Inizio: Accolgo la rinascita della mia energia e delle mie aspirazioni.",
+            "Metà: Sto prendendo slancio per l'anno a venire.",
+            "Fine: Sono pronta a saltare in nuove possibilità e avventure."
+        ]
+    },
+    "Ovulatory": {
+        "January": [
+            "Inizio: Irradio fiducia ed energia positiva.",
+            "Metà: Attiro naturalmente meravigliose opportunità.",
+            "Fine: Sono al culmine della mia creatività e auto-espressione."
+        ],
+        "February": [
+            "Inizio: Abbraccio pienamente la mia femminilità e il mio potere.",
+            "Metà: Sono una fonte di ispirazione per me stessa e per gli altri.",
+            "Fine: Manifesta i miei desideri con chiarezza e sicurezza."
+        ],
+        "March": [
+            "Inizio: Sono in perfetta armonia con il mio corpo e la mia mente.",
+            "Metà: Incarno la gioia e la vitalità della primavera.",
+            "Fine: Sono una forza della natura, potente e bella."
+        ],
+        "April": [
+            "Inizio: Sono magnetica, attirando positività e successo.",
+            "Metà: La mia energia è contagiosa, ispirando chi mi circonda.",
+            "Fine: Sono inarrestabile nella realizzazione delle mie passioni e sogni."
+        ],
+        "May": [
+            "Inizio: Fiorisco con fiducia e sicurezza in me stessa.",
+            "Metà: La mia luce interiore brilla per essere vista da tutti.",
+            "Fine: Sono al culmine del mio potere e potenziale personale."
+        ],
+        "June": [
+            "Inizio: Irradio gioia e vitalità in tutto ciò che faccio.",
+            "Metà: Sono un faro di energia positiva e ispirazione.",
+            "Fine: Manifesta senza sforzo i miei desideri e intenzioni."
+        ],
+        "July": [
+            "Inizio: Sono una radiosa espressione del potere femminile.",
+            "Metà: La mia fiducia e il mio carisma sono al culmine.",
+            "Fine: Attiro abbondanza e opportunità positive."
+        ],
+        "August": [
+            "Inizio: Incarno il calore e la vitalità dell'estate.",
+            "Metà: La mia creatività e passione sono in piena fioritura.",
+            "Fine: Sono un magnete per l'amore, il successo e la realizzazione."
+        ],
+        "September": [
+            "Inizio: Sono al culmine del mio potere personale.",
+            "Metà: La mia energia è magnetica, attirando positività.",
+            "Fine: Condivido con fiducia i miei doni con il mondo."
+        ],
+        "October": [
+            "Inizio: Irradio fiducia e forza interiore.",
+            "Metà: La mia intuizione e saggezza sono affinate.",
+            "Fine: Sono una potente creatrice della mia realtà."
+        ],
+        "November": [
+            "Inizio: Abbraccio pienamente la mia femminilità e il mio potere.",
+            "Metà: La mia energia è una luce che mi guida verso il successo.",
+            "Fine: Sono allineata con il mio massimo potenziale e scopo."
+        ],
+        "December": [
+            "Inizio: Brillo intensamente, illuminando il cammino per gli altri.",
+            "Metà: La mia fiducia e il mio fascino sono irresistibili.",
+            "Fine: Chiudo l'anno al culmine del mio potere personale."
+        ]
+    },
+    "Luteal": {
+        "January": [
+            "Inizio: Accolgo le mie emozioni con compassione e comprensione.",
+            "Metà: Trovo equilibrio tra azione e riflessione.",
+            "Fine: Mi preparo dolcemente per un nuovo ciclo."
+        ],
+        "February": [
+            "Inizio: Trasformo le sfide in opportunità di crescita.",
+            "Metà: Coltivo pazienza e gentilezza verso me stessa.",
+            "Fine: Onoro i cambiamenti dentro di me con grazia."
+        ],
+        "March": [
+            "Inizio: Mi connetto con la mia saggezza interiore per avere guida.",
+            "Metà: Accolgo le lezioni di questa fase con gratitudine.",
+            "Fine: Sono in pace con i flussi e riflussi del mio ciclo."
+        ],
+        "April": [
+            "Inizio: Accolgo l'energia introspettiva di questa fase.",
+            "Metà: Trovo forza nel rallentare e guardare dentro di me.",
+            "Fine: Mi preparo per il rinnovamento con speranza e accettazione."
+        ],
+        "May": [
+            "Inizio: Onoro il mio bisogno di riposo e cura di me stessa.",
+            "Metà: Mi fido della saggezza del mio corpo e delle mie emozioni.",
+            "Fine: Lascio andare ciò che non mi serve più con gratitudine."
+        ],
+        "June": [
+            "Inizio: Trovo equilibrio tra attività e riposo.",
+            "Metà: Mi nutro con compassione e comprensione.",
+            "Fine: Sono grata per le intuizioni guadagnate durante questa fase."
+        ],
+        "July": [
+            "Inizio: Accolgo il potere trasformativo di questa fase.",
+            "Metà: Ascolto profondamente i bisogni e la saggezza del mio corpo.",
+            "Fine: Mi preparo per un nuovo ciclo con chiarezza e intenzione."
+        ],
+        "August": [
+            "Inizio: Onoro le mie emozioni come messaggere di saggezza.",
+            "Metà: Trovo forza nella vulnerabilità e nell'autenticità.",
+            "Fine: Sono in armonia con i ritmi naturali del mio corpo."
+        ],
+        "September": [
+            "Inizio: Accolgo la tranquilla saggezza di questo tempo introspettivo.",
+            "Metà: Pratico l'autocompassione e la cura di me stessa con dolcezza.",
+            "Fine: Mi preparo per un nuovo inizio con speranza e chiarezza."
+        ],
+        "October": [
+            "Inizio: Accolgo l'energia trasformativa dell'autunno.",
+            "Metà: Trovo bellezza e saggezza nei cambiamenti dentro di me.",
+            "Fine: Lascio andare il vecchio per fare spazio alla nuova crescita."
+        ],
+        "November": [
+            "Inizio: Onoro la saggezza dei cicli naturali del mio corpo.",
+            "Metà: Trovo forza nel rallentare e guardare dentro di me.",
+            "Fine: Mi preparo per il rinnovamento con pazienza e amore per me stessa."
+        ],
+        "December": [
+            "Inizio: Accolgo questo tempo di riflessione e integrazione.",
+            "Metà: Sono grata per le lezioni apprese durante tutto l'anno.",
+            "Fine: Chiudo questo ciclo con profondo rispetto per la saggezza del mio corpo."
+        ]
+    }
+}
+

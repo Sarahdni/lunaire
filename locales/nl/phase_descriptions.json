@@ -1,0 +1,173 @@
+{
+    "Menstrual": {
+        "title": "❄️ Winterstroom | Rust en introspectie",
+        "description": {
+            "mantra": "from mantras_list.py",
+            "phase_info": {"text": "❄️ Menstruele fase", "link": "https://www.example.com/menstrual-info"},
+            "sports_recommendations": [
+                {"text": "Zachte yoga", "link": "https://www.example.com/gentle-yoga"},
+                "Rekoefeningen",
+                "Lichte wandelingen",
+                {"text": "Meditatie", "link": "https://www.example.com/meditation-techniques"}
+            ],
+            "nutrition": {
+                "recommended_foods": [
+                    {"text": "IJzerrijke voedingsmiddelen", "link": "https://www.example.com/iron-rich-foods"},
+                    "Bessen (bosbessen, aardbeien, granaatappels)",
+                    {"text": "Voedingsmiddelen rijk aan vitamine C", "link": "https://www.example.com/vitamin-c-foods"},
+                    "Kalmerende kruidentheeën (kamille, gember)"
+                ],
+                "foods_to_avoid": [
+                    "Zeer zoute voedingsmiddelen (kunnen waterretentie verergeren)",
+                    {"text": "Cafeïne en alcohol", "link": "https://www.example.com/caffeine-alcohol-effects"}
+                ]
+            },
+            "vitamins_supplements": [
+                {"text": "IJzer", "link": "https://www.example.com/iron-supplements"},
+                "Vitamine C",
+                {"text": "Magnesium", "link": "https://www.example.com/magnesium-benefits"}
+            ],
+            "seed_cycling": {
+                "seeds": ["Lijnzaad", "Pompoenpitten"],
+                "benefits": "Ondersteunt de productie van oestrogeen voor de aankomende folliculaire fase",
+                "link": "https://www.example.com/seed-cycling-guide"
+            },
+            "self_care_tips": [
+                {"text": "Neem warme baden om krampen te verlichten", "link": "https://www.example.com/warm-bath-benefits"},
+                "Gun jezelf meer rust",
+                {"text": "Oefen meditatie of diepe ademhaling", "link": "https://www.example.com/deep-breathing-techniques"},
+                "Gebruik een warmwaterkruik op je onderbuik"
+            ]
+        },
+        "Follicular": {
+            "title": "🌱 Lenteontwaken | Groei en potentieel",
+            "description": {
+                "mantra": "from mantras_list.py",
+                "phase_info": {"text": "🌱 Folliculaire fase", "link": "https://www.example.com/follicular-info"},
+                "sports_recommendations": [
+                    {"text": "Cardiotraining", "link": "https://www.example.com/cardio-exercises"},
+                    "Krachttraining",
+                    "Danslessen",
+                    {"text": "High-intensity intervaltraining (HIIT)", "link": "https://www.example.com/hiit-workouts"}
+                ],
+                "nutrition": {
+                    "recommended_foods": [
+                        {"text": "Mager eiwitten", "link": "https://www.example.com/lean-proteins"},
+                        "Bladgroenten",
+                        {"text": "Complexe koolhydraten", "link": "https://www.example.com/complex-carbs"},
+                        "Gefermenteerde voedingsmiddelen (yoghurt, kefir, zuurkool)"
+                    ],
+                    "foods_to_avoid": [
+                        "Bewerkte voedingsmiddelen",
+                        {"text": "Overmatige suiker", "link": "https://www.example.com/sugar-effects"}
+                    ]
+                },
+                "vitamins_supplements": [
+                    {"text": "B-complex vitamines", "link": "https://www.example.com/b-vitamins"},
+                    "Omega-3 vetzuren",
+                    {"text": "Zink", "link": "https://www.example.com/zinc-benefits"}
+                ],
+                "seed_cycling": {
+                    "seeds": ["Lijnzaad", "Pompoenpitten"],
+                    "benefits": "Blijft de oestrogeenproductie ondersteunen",
+                    "link": "https://www.example.com/seed-cycling-guide"
+                },
+                "self_care_tips": [
+                    {"text": "Stel nieuwe doelen en intenties", "link": "https://www.example.com/goal-setting"},
+                    "Probeer een nieuwe hobby of vaardigheid",
+                    {"text": "Organiseer en ruim je ruimte op", "link": "https://www.example.com/decluttering-tips"},
+                    "Maak contact met vrienden en socialiseer"
+                ]
+            }
+        },
+        "Ovulatory": {
+            "title": "☀️ Zomerbloei | Topenergie en zelfvertrouwen",
+            "description": {
+                "mantra": "from mantras_list.py",
+                "phase_info": {"text": "☀️ Ovulatiefase", "link": "https://www.example.com/ovulatory-info"},
+                "sports_recommendations": [
+                    {"text": "High-intensity trainingen", "link": "https://www.example.com/high-intensity-workouts"},
+                    "Teamsporten",
+                    "Hardlopen of fietsen",
+                    {"text": "Krachttraining", "link": "https://www.example.com/weight-lifting-benefits"}
+                ],
+                "nutrition": {
+                    "recommended_foods": [
+                        {"text": "Ontstekingsremmende voedingsmiddelen", "link": "https://www.example.com/anti-inflammatory-foods"},
+                        "Kleurrijke groenten en fruit",
+                        {"text": "Gezonde vetten (avocado, noten, zaden)", "link": "https://www.example.com/healthy-fats"},
+                        "Mager eiwitten"
+                    ],
+                    "foods_to_avoid": [
+                        "Bewerkte voedingsmiddelen",
+                        {"text": "Geraffineerde suikers", "link": "https://www.example.com/refined-sugar-effects"}
+                    ]
+                },
+                "vitamins_supplements": [
+                    {"text": "Vitamine E", "link": "https://www.example.com/vitamin-e-benefits"},
+                    "Vitamine D",
+                    {"text": "Co-enzym Q10", "link": "https://www.example.com/coq10-benefits"}
+                ],
+                "seed_cycling": {
+                    "seeds": ["Zonnebloempitten", "Sesamzaad"],
+                    "benefits": "Ondersteunt de productie van progesteron voor de komende luteale fase"
+                },
+                "self_care_tips": [
+                    {"text": "Doe mee aan sociale activiteiten", "link": "https://www.example.com/social-wellbeing"},
+                    "Uit jezelf creatief",
+                    {"text": "Oefen zelfvertrouwenstechnieken", "link": "https://www.example.com/confidence-boosting"},
+                    "Probeer openbaar spreken of netwerkbijeenkomsten"
+                ]
+            }
+        },
+        "Luteal": {
+            "title": "🍂 Herfstnesting | Vertragen en voorbereiden",
+            "description": {
+                "mantra": "from mantras_list.py",
+                "phase_info": {"text": "🍂 Luteale fase", "link": "https://www.example.com/luteal-info"},
+                "sports_recommendations": [
+                    {"text": "Pilates", "link": "https://www.example.com/pilates-benefits"},
+                    "Zwemmen",
+                    "Yoga",
+                    {"text": "Low-impact cardio", "link": "https://www.example.com/low-impact-cardio"}
+                ],
+                "nutrition": {
+                    "recommended_foods": [
+                        {"text": "Magnesiumrijke voedingsmiddelen", "link": "https://www.example.com/magnesium-rich-foods"},
+                        "Complexe koolhydraten (zoete aardappelen, zilvervliesrijst)",
+                        {"text": "Calciumrijke voedingsmiddelen", "link": "https://www.example.com/calcium-rich-foods"},
+                        "Donkergroene bladgroenten"
+                    ],
+                    "foods_to_avoid": [
+                        "Cafeïne (kan angst en prikkelbaarheid vergroten)",
+                        {"text": "Zoute voedingsmiddelen", "link": "https://www.example.com/salt-effects-pms"}
+                    ]
+                },
+                "vitamins_supplements": [
+                    {"text": "Magnesium", "link": "https://www.example.com/magnesium-benefits"},
+                    "Vitamine B6",
+                    {"text": "Calcium", "link": "https://www.example.com/calcium-benefits"}
+                ],
+                "seed_cycling": {
+                    "seeds": ["Zonnebloempitten", "Sesamzaad"],
+                    "benefits": "Blijft de productie van progesteron ondersteunen",
+                    "link": "https://www.example.com/seed-cycling-guide"
+                },
+                "self_care_tips": [
+                    {"text": "Oefen stressmanagementtechnieken", "link": "https://www.example.com/stress-management"},
+                    "Neem tijd voor zelfreflectie",
+                    {"text": "Doe kalmerende activiteiten zoals lezen of knutselen", "link": "https://www.example.com/calming-hobbies"},
+                    "Bereid je ruimte voor op de komende menstruatiefase"
+                ]
+            }
+        }
+    }
+  }
+
+    
+
+
+
+
+
+

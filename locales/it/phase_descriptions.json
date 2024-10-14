@@ -1,0 +1,167 @@
+{
+    "Menstrual": {
+        "title": "❄️ Flusso invernale | Calma e introspezione",
+        "description": {
+            "mantra": "dal file mantras_list.py",
+            "phase_info": {"text": "❄️ Fase mestruale", "link": "https://www.example.com/menstrual-info"},
+            "sports_recommendations": [
+                {"text": "Yoga dolce", "link": "https://www.example.com/gentle-yoga"},
+                "Stretching",
+                "Passeggiate leggere",
+                {"text": "Meditazione", "link": "https://www.example.com/meditation-techniques"}
+            ],
+            "nutrition": {
+                "recommended_foods": [
+                    {"text": "Alimenti ricchi di ferro", "link": "https://www.example.com/iron-rich-foods"},
+                    "Frutti di bosco (mirtilli, fragole, melograni)",
+                    {"text": "Alimenti ricchi di vitamina C", "link": "https://www.example.com/vitamin-c-foods"},
+                    "Tisane calmanti (camomilla, zenzero)"
+                ],
+                "foods_to_avoid": [
+                    "Cibi molto salati (possono peggiorare la ritenzione idrica)",
+                    {"text": "Caffeina e alcol", "link": "https://www.example.com/caffeine-alcohol-effects"}
+                ]
+            },
+            "vitamins_supplements": [
+                {"text": "Ferro", "link": "https://www.example.com/iron-supplements"},
+                "Vitamina C",
+                {"text": "Magnesio", "link": "https://www.example.com/magnesium-benefits"}
+            ],
+            "seed_cycling": {
+                "seeds": ["Semi di lino", "Semi di zucca"],
+                "benefits": "Sostiene la produzione di estrogeni per la prossima fase follicolare",
+                "link": "https://www.example.com/seed-cycling-guide"
+            },
+            "self_care_tips": [
+                {"text": "Fai bagni caldi per alleviare i crampi", "link": "https://www.example.com/warm-bath-benefits"},
+                "Concediti più riposo",
+                {"text": "Pratica meditazione o respirazione profonda", "link": "https://www.example.com/deep-breathing-techniques"},
+                "Usa una borsa dell'acqua calda sull'addome inferiore"
+            ]
+        }
+    },
+    "Follicular": {
+        "title": "🌱 Risveglio primaverile | Crescita e potenziale",
+        "description": {
+            "mantra": "dal file mantras_list.py",
+            "phase_info": {"text": "🌱 Fase follicolare", "link": "https://www.example.com/follicular-info"},
+            "sports_recommendations": [
+                {"text": "Esercizi cardio", "link": "https://www.example.com/cardio-exercises"},
+                "Allenamento di forza",
+                "Lezioni di danza",
+                {"text": "Allenamento a intervalli ad alta intensità (HIIT)", "link": "https://www.example.com/hiit-workouts"}
+            ],
+            "nutrition": {
+                "recommended_foods": [
+                    {"text": "Proteine magre", "link": "https://www.example.com/lean-proteins"},
+                    "Verdure a foglia verde",
+                    {"text": "Carboidrati complessi", "link": "https://www.example.com/complex-carbs"},
+                    "Cibi fermentati (yogurt, kefir, crauti)"
+                ],
+                "foods_to_avoid": [
+                    "Cibi trasformati",
+                    {"text": "Zucchero eccessivo", "link": "https://www.example.com/sugar-effects"}
+                ]
+            },
+            "vitamins_supplements": [
+                {"text": "Vitamine del gruppo B", "link": "https://www.example.com/b-vitamins"},
+                "Acidi grassi Omega-3",
+                {"text": "Zinco", "link": "https://www.example.com/zinc-benefits"}
+            ],
+            "seed_cycling": {
+                "seeds": ["Semi di lino", "Semi di zucca"],
+                "benefits": "Continua a sostenere la produzione di estrogeni",
+                "link": "https://www.example.com/seed-cycling-guide"
+            },
+            "self_care_tips": [
+                {"text": "Stabilisci nuovi obiettivi e intenzioni", "link": "https://www.example.com/goal-setting"},
+                "Prova un nuovo hobby o abilità",
+                {"text": "Organizza e riordina il tuo spazio", "link": "https://www.example.com/decluttering-tips"},
+                "Collegati con amici e socializza"
+            ]
+        }
+    },
+    "Ovulatory": {
+        "title": "☀️ Fioritura estiva | Energia e fiducia al massimo",
+        "description": {
+            "mantra": "dal file mantras_list.py",
+            "phase_info": {"text": "☀️ Fase ovulatoria", "link": "https://www.example.com/ovulatory-info"},
+            "sports_recommendations": [
+                {"text": "Allenamenti ad alta intensità", "link": "https://www.example.com/high-intensity-workouts"},
+                "Sport di squadra",
+                "Corsa o ciclismo",
+                {"text": "Sollevamento pesi", "link": "https://www.example.com/weight-lifting-benefits"}
+            ],
+            "nutrition": {
+                "recommended_foods": [
+                    {"text": "Alimenti antinfiammatori", "link": "https://www.example.com/anti-inflammatory-foods"},
+                    "Frutta e verdura colorata",
+                    {"text": "Grassi sani (avocado, noci, semi)", "link": "https://www.example.com/healthy-fats"},
+                    "Proteine magre"
+                ],
+                "foods_to_avoid": [
+                    "Cibi trasformati",
+                    {"text": "Zuccheri raffinati", "link": "https://www.example.com/refined-sugar-effects"}
+                ]
+            },
+            "vitamins_supplements": [
+                {"text": "Vitamina E", "link": "https://www.example.com/vitamin-e-benefits"},
+                "Vitamina D",
+                {"text": "Coenzima Q10", "link": "https://www.example.com/coq10-benefits"}
+            ],
+            "seed_cycling": {
+                "seeds": ["Semi di girasole", "Semi di sesamo"],
+                "benefits": "Sostiene la produzione di progesterone per la fase luteale",
+                "link": "https://www.example.com/seed-cycling-guide"
+            },
+            "self_care_tips": [
+                {"text": "Partecipa ad attività sociali", "link": "https://www.example.com/social-wellbeing"},
+                "Esprimiti creativamente",
+                {"text": "Pratica esercizi di autostima", "link": "https://www.example.com/confidence-boosting"},
+                "Prova a parlare in pubblico o a partecipare a eventi di networking"
+            ]
+        }
+    },
+    "Luteal": {
+        "title": "🍂 Nido autunnale | Rallentare e prepararsi",
+        "description": {
+            "mantra": "from mantras_list.py",
+            "phase_info": {"text": "🍂 Fase luteale", "link": "https://www.example.com/luteal-info"},
+            "sports_recommendations": [
+                {"text": "Pilates", "link": "https://www.example.com/pilates-benefits"},
+                "Nuoto",
+                "Yoga",
+                {"text": "Cardio a basso impatto", "link": "https://www.example.com/low-impact-cardio"}
+            ],
+            "nutrition": {
+                "recommended_foods": [
+                    {"text": "Cibi ricchi di magnesio", "link": "https://www.example.com/magnesium-rich-foods"},
+                    "Carboidrati complessi (patate dolci, riso integrale)",
+                    {"text": "Cibi ricchi di calcio", "link": "https://www.example.com/calcium-rich-foods"},
+                    "Verdure a foglia verde"
+                ],
+                "foods_to_avoid": [
+                    "Caffeina (può aumentare ansia e irritabilità)",
+                    {"text": "Cibi salati", "link": "https://www.example.com/salt-effects-pms"}
+                ]
+            },
+            "vitamins_supplements": [
+                {"text": "Magnesio", "link": "https://www.example.com/magnesium-benefits"},
+                "Vitamina B6",
+                {"text": "Calcio", "link": "https://www.example.com/calcium-benefits"}
+            ],
+            "seed_cycling": {
+                "seeds": ["Semi di girasole", "Semi di sesamo"],
+                "benefits": "Continua a sostenere la produzione di progesterone",
+                "link": "https://www.example.com/seed-cycling-guide"
+            },
+            "self_care_tips": [
+                {"text": "Pratica tecniche di gestione dello stress", "link": "https://www.example.com/stress-management"},
+                "Prenditi del tempo per l'auto-riflessione",
+                {"text": "Svolgi attività rilassanti come leggere o fare bricolage", "link": "https://www.example.com/calming-hobbies"},
+                "Prepara il tuo spazio per la prossima fase mestruale"
+            ]
+        }
+    }
+}
+    

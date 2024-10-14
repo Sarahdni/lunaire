@@ -1,0 +1,250 @@
+{
+    "Menstrual": {
+        "January": [
+            "Début : J'accueille cette période de repos et de renouvellement.",
+            "Milieu : J'écoute profondément la sagesse de mon corps.",
+            "Fin : Je libère l'ancien et accueille le nouveau."
+        ],
+        "February": [
+            "Début : J'honore les rythmes naturels de mon corps.",
+            "Milieu : Je trouve de la force dans la tranquillité et l'introspection.",
+            "Fin : Je me prépare à l'émergence d'une nouvelle énergie."
+        ],
+        "March": [
+            "Début : Je me permets le repos dont j'ai besoin pour renaître.",
+            "Milieu : Je cultive la patience et la douceur envers moi-même.",
+            "Fin : Je me renouvelle avec l'arrivée du printemps."
+        ],
+        "April": [
+            "Début : J'embrasse l'énergie nourricière de cette phase.",
+            "Milieu : Je suis ancrée et centrée en moi-même.",
+            "Fin : J'honore la sagesse de mon corps en cycle."
+        ],
+        "May": [
+            "Début : J'ai confiance en le pouvoir guérisseur du repos.",
+            "Milieu : Je suis à l'écoute des besoins et des désirs de mon corps.",
+            "Fin : J'embrasse la transformation et la croissance."
+        ],
+        "June": [
+            "Début : Je trouve la paix en ralentissant et en me tournant vers l'intérieur.",
+            "Milieu : Je nourris mon corps et mon âme avec bienveillance.",
+            "Fin : Je suis ouverte aux perspectives qu'apporte cette phase."
+        ],
+        "July": [
+            "Début : J'embrasse la force tranquille de mon monde intérieur.",
+            "Milieu : Je libère ce qui ne me sert plus.",
+            "Fin : Je suis reconnaissante pour les cycles naturels de mon corps."
+        ],
+        "August": [
+            "Début : J'honore ce temps de retrait et de réflexion.",
+            "Milieu : Je suis douce et compatissante avec moi-même.",
+            "Fin : J'ai confiance en la sagesse de mon corps."
+        ],
+        "September": [
+            "Début : Je trouve le renouveau dans le repos et la solitude.",
+            "Milieu : J'écoute les murmures de mon intuition.",
+            "Fin : Je me prépare à un nouveau cycle avec espoir et clarté."
+        ],
+        "October": [
+            "Début : J'embrasse le pouvoir transformateur de cette phase.",
+            "Milieu : Je trouve de la force dans la vulnérabilité et l'authenticité.",
+            "Fin : Je suis en harmonie avec les cycles de la nature et de mon corps."
+        ],
+        "November": [
+            "Début : J'honore la sagesse de mon corps en cycle.",
+            "Milieu : Je trouve du réconfort en ralentissant et en me tournant vers l'intérieur.",
+            "Fin : Je libère l'ancien pour faire place au nouveau."
+        ],
+        "December": [
+            "Début : J'embrasse cette période de repos sacré et de renouvellement.",
+            "Milieu : Je suis reconnaissante pour les leçons que mon corps m'enseigne.",
+            "Fin : Je termine cette année avec un profond respect pour la sagesse de mon corps."
+        ]
+    },
+    "Follicular": {
+        "January": [
+            "Début : Je suis prête à nourrir de nouvelles idées et projets.",
+            "Milieu : Chaque jour, je deviens plus forte et plus confiante.",
+            "Fin : Je m'ouvre aux possibilités infinies devant moi."
+        ],
+        "February": [
+            "Début : Je plante les graines de mon futur succès.",
+            "Milieu : Ma créativité fleurit un peu plus chaque jour.",
+            "Fin : Je suis en pleine croissance, comme la nature qui s'éveille."
+        ],
+        "March": [
+            "Début : Je m'aligne avec l'énergie croissante du printemps.",
+            "Milieu : J'accueille de nouvelles opportunités avec enthousiasme.",
+            "Fin : Je suis prête à m'épanouir pleinement."
+        ],
+        "April": [
+            "Début : J'embrasse l'énergie fraîche des nouveaux départs.",
+            "Milieu : Mon potentiel est illimité et en expansion.",
+            "Fin : Je suis en parfaite harmonie avec le rythme de la vie."
+        ],
+        "May": [
+            "Début : Je déborde de vitalité et d'énergie créative.",
+            "Milieu : Je nourris mes rêves avec positivité et action.",
+            "Fin : Je m'épanouis dans tout mon potentiel."
+        ],
+        "June": [
+            "Début : J'accueille la lumière croissante en moi et autour de moi.",
+            "Milieu : Ma force intérieure et ma confiance fleurissent.",
+            "Fin : Je suis prête à faire briller ma lumière dans le monde."
+        ],
+        "July": [
+            "Début : Je suis ouverte à de nouvelles expériences et à la croissance.",
+            "Milieu : Mon énergie augmente, alimentant mes rêves et objectifs.",
+            "Fin : Je deviens la meilleure version de moi-même."
+        ],
+        "August": [
+            "Début : J'embrasse l'abondance des opportunités qui m'entourent.",
+            "Milieu : Ma créativité et mon inspiration sont à leur apogée.",
+            "Fin : Je suis prête à manifester les désirs de mon cœur."
+        ],
+        "September": [
+            "Début : J'accueille les nouveaux départs avec les bras ouverts.",
+            "Milieu : Ma sagesse intérieure me guide vers la croissance et le succès.",
+            "Fin : Je me prépare à récolter les fruits de mes efforts."
+        ],
+        "October": [
+            "Début : J'embrasse le changement comme catalyseur de croissance.",
+            "Milieu : Mon feu intérieur grandit, alimentant ma passion et ma détermination.",
+            "Fin : Je suis prête à entrer dans ma puissance et mon potentiel."
+        ],
+        "November": [
+            "Début : Je plante les graines de nouvelles intentions et rêves.",
+            "Milieu : Mon énergie augmente, apportant clarté et concentration.",
+            "Fin : Je suis en harmonie avec mes objectifs et j'avance avec confiance."
+        ],
+        "December": [
+            "Début : J'accueille la renaissance de mon énergie et de mes aspirations.",
+            "Milieu : Je prends de l'élan pour l'année à venir.",
+            "Fin : Je suis prête à sauter dans de nouvelles possibilités et aventures."
+        ]
+    },
+    "Ovulatory": {
+        "January": [
+            "Début : Je rayonne de confiance et d'énergie positive.",
+            "Milieu : J'attire naturellement de merveilleuses opportunités.",
+            "Fin : Je suis à l'apogée de ma créativité et de mon expression personnelle."
+        ],
+        "February": [
+            "Début : J'embrasse pleinement ma féminité et mon pouvoir.",
+            "Milieu : Je suis une source d'inspiration pour moi-même et les autres.",
+            "Fin : Je manifeste mes désirs avec clarté et assurance."
+        ],
+        "March": [
+            "Début : Je suis en parfaite harmonie avec mon corps et mon esprit.",
+            "Milieu : J'incarne la joie et la vitalité du printemps.",
+            "Fin : Je suis une force de la nature, puissante et belle."
+        ],
+        "April": [
+            "Début : Je suis magnétique, attirant positivité et succès.",
+            "Milieu : Mon énergie est contagieuse, inspirant ceux qui m'entourent.",
+            "Fin : Je suis inarrêtable dans la poursuite de mes passions et de mes rêves."
+        ],
+        "May": [
+            "Début : Je fleurie avec confiance et assurance.",
+            "Milieu : Ma lumière intérieure brille pour que tous la voient.",
+            "Fin : Je suis à l'apogée de mon pouvoir et de mon potentiel personnels."
+        ],
+        "June": [
+            "Début : Je rayonne de joie et de vitalité dans tout ce que je fais.",
+            "Milieu : Je suis un phare d'énergie positive et d'inspiration.",
+            "Fin : Je manifeste sans effort mes désirs et intentions."
+        ],
+        "July": [
+            "Début : Je suis une expression radieuse de la puissance féminine.",
+            "Milieu : Ma confiance et mon charisme sont à leur apogée.",
+            "Fin : J'attire l'abondance et les opportunités positives."
+        ],
+        "August": [
+            "Début : J'incarne la chaleur et la vivacité de l'été.",
+            "Milieu : Ma créativité et ma passion sont en pleine floraison.",
+            "Fin : Je suis un aimant pour l'amour, le succès et l'accomplissement."
+        ],
+        "September": [
+            "Début : Je suis au sommet de ma puissance personnelle.",
+            "Milieu : Mon énergie est magnétique, attirant la positivité.",
+            "Fin : Je partage avec confiance mes dons avec le monde."
+        ],
+        "October": [
+            "Début : Je rayonne de confiance et de force intérieure.",
+            "Milieu : Mon intuition et ma sagesse sont fortement aiguisées.",
+            "Fin : Je suis une créatrice puissante de ma propre réalité."
+        ],
+        "November": [
+            "Début : J'embrasse pleinement ma féminité et ma puissance.",
+            "Milieu : Mon énergie est une lumière qui me guide vers le succès.",
+            "Fin : Je suis en harmonie avec mes aspirations les plus élevées."
+        ],
+        "December": [
+            "Début : Je brille intensément, illuminant le chemin pour les autres.",
+            "Milieu : Ma confiance et mon charme sont irrésistibles.",
+            "Fin : Je termine l'année au sommet de ma puissance personnelle."
+        ]
+    },
+    "Luteal": {
+        "January": [
+            "Début : J'accueille mes émotions avec compassion et compréhension.",
+            "Milieu : Je trouve un équilibre entre action et réflexion.",
+            "Fin : Je me prépare doucement pour un nouveau cycle."
+        ],
+        "February": [
+            "Début : Je transforme les défis en opportunités de croissance.",
+            "Milieu : Je cultive la patience et la bienveillance envers moi-même.",
+            "Fin : J'honore les changements en moi avec grâce."
+        ],
+        "March": [
+            "Début : Je me connecte à ma sagesse intérieure pour trouver des réponses.",
+            "Milieu : J'accueille les leçons de cette phase avec gratitude.",
+            "Fin : Je suis en paix avec les flux et reflux de mon cycle."
+        ],
+        "April": [
+            "Début : J'embrasse l'énergie introspective de cette phase.",
+            "Milieu : Je trouve la force en ralentissant et en me tournant vers l'intérieur.",
+            "Fin : Je me prépare pour un renouveau avec espoir et acceptation."
+        ],
+        "May": [
+            "Début : J'honore mon besoin de repos et de soin personnel.",
+            "Milieu : J'ai confiance en la sagesse de mon corps et de mes émotions.",
+            "Fin : Je libère ce qui ne me sert plus avec gratitude."
+        ],
+        "June": [
+            "Début : Je trouve un équilibre entre activité et repos.",
+            "Milieu : Je me nourris de compassion et de compréhension.",
+            "Fin : Je suis reconnaissante pour les perspectives acquises durant cette phase."
+        ],
+        "July": [
+            "Début : J'embrasse le pouvoir transformateur de cette phase.",
+            "Milieu : J'écoute profondément les besoins et la sagesse de mon corps.",
+            "Fin : Je me prépare pour un nouveau cycle avec clarté et intention."
+        ],
+        "August": [
+            "Début : J'honore mes émotions comme messagères de sagesse.",
+            "Milieu : Je trouve la force dans la vulnérabilité et l'authenticité.",
+            "Fin : Je suis en harmonie avec les rythmes naturels de mon corps."
+        ],
+        "September": [
+            "Début : J'accueille la sagesse tranquille de ce temps introspectif.",
+            "Milieu : Je pratique la compassion envers moi-même et un soin personnel doux.",
+            "Fin : Je me prépare à un nouveau départ avec espoir et clarté."
+        ],
+        "October": [
+            "Début : J'embrasse l'énergie transformative de l'automne.",
+            "Milieu : Je trouve la beauté et la sagesse dans les changements en moi.",
+            "Fin : Je libère l'ancien pour faire de la place à la nouvelle croissance."
+        ],
+        "November": [
+            "Début : J'honore la sagesse des cycles naturels de mon corps.",
+            "Milieu : Je trouve de la force en ralentissant et en me tournant vers l'intérieur.",
+            "Fin : Je me prépare pour le renouveau avec patience et amour de soi."
+        ],
+        "December": [
+            "Début : J'embrasse ce temps de réflexion et d'intégration.",
+            "Milieu : Je suis reconnaissante pour les leçons apprises tout au long de l'année.",
+            "Fin : Je termine ce cycle avec un profond respect pour la sagesse de mon corps."
+        ]
+    }
+}
