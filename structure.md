@@ -7,6 +7,7 @@ project_root/
 ├── utils/
 │   ├── __init__.py
 │   ├── logger.py
+│   ├── quiz_config.json
 │   └── language_manager.py
 │
 ├── email/
@@ -16,12 +17,9 @@ project_root/
 │
 ├── calendars/
 │   ├── __init__.py
-│   ├── calendar_factory.py
-│   ├── cycle_calculator.py
+│   ├── cycle_calculator.py     """gère le calcul des phases du cycle menstruel."""
+│   ├── recommendations.py      """s'occupe de la génération de recommandations formatées."""
 │   ├── ical_generator.py
-│   ├── google_calendar_generator.py
-│   ├── outlook_calendar_generator.py
-│   └── apple_calendar_generator.py
 │
 ├── database/
 │   ├── __init__.py

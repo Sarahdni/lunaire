@@ -1,0 +1,72 @@
+{
+  "questions": [
+    {
+      "key": "name",
+      "question": "Hi, what's your first name?",
+      "type": "text",
+      "has_entered_text": true
+    },
+    {
+      "key": "email",
+      "question": "Welcome {{slide:9XiMaDO}}, what's your email address?",
+      "type": "text",
+      "has_entered_text": true
+    },
+    {
+      "key": "birth_date",
+      "question": "When is your birthday, {{slide:9XiMaDO}}?",
+      "type": "date",
+      "has_entered_text": true
+    },
+    {
+      "key": "country",
+      "question": "Which country do you live in?",
+      "type": "text",
+      "has_entered_text": true
+    },
+    {
+      "key": "last_period_date",
+      "question": "To better understand your cycle, could you share when your last menstrual cycle occurred?",
+      "type": "date",
+      "has_entered_text": true
+    },
+    {
+      "key": "period_duration",
+      "question": "How long does your period typically last?",
+      "type": "integer",
+      "has_entered_text": true
+    },
+    {
+      "key": "cycle_length",
+      "question": "What's the average length of your menstrual cycle?",
+      "type": "integer",
+      "has_entered_text": true
+    },
+    {
+      "key": "language",
+      "question": "Which language you prefer to receive the calendar in?",
+      "type": "choice",
+      "has_entered_text": false,
+      "mapping": {
+        "English": "en",
+        "Français": "fr",
+        "Español": "es",
+        "Nederlands": "nl",
+        "Deutsch": "de",
+        "Italiano": "it"
+      }
+    },
+    {
+      "key": "calendar_service",
+      "question": "Which calendar service would you like to use?",
+      "type": "choice",
+      "has_entered_text": false,
+      "mapping": {
+        "Google": "google",
+        "Outlook": "outlook",
+        "Apple": "apple",
+        "default": "ical"
+      }
+    }
+  ]
+}

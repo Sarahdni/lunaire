@@ -1,7 +1,8 @@
 import imaplib
 import email
 from bs4 import BeautifulSoup
-import re
+import json
+import os
 from datetime import datetime
 from config import EMAIL, EMAIL_PASSWORD, IMAP_SERVER, NOTIFICATION_EMAIL
 from utils.logger import logger
@@ -46,86 +47,60 @@ def get_unprocessed_emails(mail, sender_email=None, last_processed_id=None):
 def parse_email_content(email_message):
     if email_message.is_multipart():
         for part in email_message.walk():
-            if part.get_content_type() == "text/plain":
+            if part.get_content_type() == "text/html":
                 return part.get_payload(decode=True).decode()
     else:
         return email_message.get_payload(decode=True).decode()
 
+def load_quiz_config():
+    config_path = os.path.join(os.path.dirname(__file__), '..', 'utils', 'quiz_config.json')
+    with open(config_path, 'r') as file:
+        return json.load(file)
+
 def extract_info(email_content):
     soup = BeautifulSoup(email_content, 'html.parser')
     info = {}
+    quiz_config = load_quiz_config()
 
-    for b_tag in soup.find_all('b'):
-        key = b_tag.text.strip().replace(':', '').lower()
-        if key == "welcome {{slide:9ximado}}, what's your email address":
-            key = 'email'
-        elif key == "hi, what's your first name?":
-            key = 'name'
-        elif key == "when is your birthday, {{slide:9ximado}}?":
-            key = 'birth_date'
-        elif key == "to better understand your cycle, could you share when your last menstrual cycle occurred?":
-            key = 'last_period_date'
-        
-        i_tag = b_tag.find_next('i')
-        if i_tag:
-            value = i_tag.text.strip()
-            if 'Entered Text:' in value:
-                value = value.replace('Entered Text:', '').strip()
-            info[key] = value
-        else:
+    for question in quiz_config['questions']:
+        b_tag = soup.find('b', string=lambda text: text and question['question'] in text)
+        if b_tag:
+            value = None
             next_tag = b_tag.find_next()
-            if next_tag and next_tag.name != 'b':
-                info[key] = next_tag.text.strip()
+            
+            # Chercher la valeur dans les balises suivantes
+            while next_tag and next_tag.name != 'b':
+                if next_tag.name == 'i':
+                    value = next_tag.text.strip()
+                    if 'Entered Text:' in value:
+                        value = value.split('Entered Text:', 1)[1].strip()
+                    break
+                elif next_tag.string and next_tag.string.strip():
+                    value = next_tag.string.strip()
+                    break
+                next_tag = next_tag.next_sibling
 
-    # Traitement spécial pour certains champs
-    if 'last_period_date' in info:
-        info['last_period_date'] = info['last_period_date'][:10]  # Garder seulement la partie date
+            if value:
+                if question['type'] == 'date':
+                    value = value[:10]  # Keep only the date part
+                elif question['type'] == 'integer':
+                    try:
+                        value = int(value)
+                    except ValueError:
+                        logger.warning(f"Could not convert {value} to integer for {question['key']}")
+                elif question['type'] == 'choice' and 'mapping' in question:
+                    value = question['mapping'].get(value, question['mapping'].get('default', value))
+                
+                info[question['key']] = value
+                logger.info(f"Extracted {question['key']}: {value}")
+            else:
+                logger.warning(f"No value found for question: {question['question']}")
 
-    if 'how long does your period typically last?' in info:
-        info['period_duration'] = int(info['how long does your period typically last?'])
-
-    if "what's the average length of your menstrual cycle?" in info:
-        info['cycle_length'] = int(info["what's the average length of your menstrual cycle?"])
-
-    # Traitement spécial pour la langue préférée
-    lang_keys = [
-        'which language you prefer to receive the calendar in?',
-        'preferred language',
-        'language'
-    ]
-    
-    lang_key = 'Which language you prefer to receive the calendar in?'
-    if lang_key in info:
-        lang_value = info[lang_key].strip()
-        lang_mapping = {
-            'English': 'en',
-            'Français': 'fr',
-            'Español': 'es',
-            'Nederlands': 'nl',
-            'Deutsch': 'de',
-            'Italiano': 'it'
-        }
-        info['language'] = lang_mapping.get(lang_value, 'en')
-        logger.info(f"Extracted language value: {lang_value}")
-        logger.info(f"Mapped language code: {info['language']}")
-    else:
-        info['language'] = 'en'
-        logger.info("No language preference found, defaulting to English")
-
-
-    # Traitement spécial pour le service de calendrier
-    calendar_key = 'which calendar service would you like to use?'
-    if calendar_key in info:
-        calendar_value = info[calendar_key].lower()
-        if 'google' in calendar_value:
-            info['calendar_service'] = 'google'
-        elif 'outlook' in calendar_value:
-            info['calendar_service'] = 'outlook'
-        elif 'apple' in calendar_value:
-            info['calendar_service'] = 'apple'
-        else:
-            info['calendar_service'] = 'ical'
-    else:
-        info['calendar_service'] = 'ical'  # Valeur par défaut
-    
+    logger.info(f"Full extracted info: {info}")
     return info
+
+# You can add any additional helper functions or code here if needed
+
+if __name__ == "__main__":
+    # This block can be used for testing the functions in this file
+    pass

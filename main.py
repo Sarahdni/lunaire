@@ -3,7 +3,8 @@ from datetime import datetime
 from utils.language_manager import LanguageManager
 from mail_services.email_receiver import connect_to_email, get_unprocessed_emails, parse_email_content, extract_info
 from database import user_manager
-from calendars import calculate_cycle, CalendarFactory
+from calendars import calculate_cycle
+from calendars.ical_generator import ICalGenerator
 from mail_services.email_sender import send_email_to_user
 from utils.logger import logger
 
@@ -17,7 +18,7 @@ def save_last_processed_id(email_id):
     # For example, you could store this in a database or a file
     pass
 
-def create_calendar_file(phases, user_info, language_manager):
+def create_calendar_file(phases, user_info, phase_descriptions, mantras):
     try:
         logger.info("Creating iCal calendar file")
         user_name = user_info.get('name', user_info.get("what's your name?", 'Unknown_User'))
@@ -27,13 +28,10 @@ def create_calendar_file(phases, user_info, language_manager):
         os.makedirs(calendar_folder, exist_ok=True)
 
         user_language = user_info.get('language', 'en')
-        logger.info(f"User language before calendar creation: {user_info.get('language', 'en')}")
+        logger.info(f"User language before calendar creation: {user_language}")
         
-        phase_descriptions = language_manager.get_phase_descriptions(user_language)
-        mantras = language_manager.get_mantras(user_language)
-
-        calendar_generator = CalendarFactory.get_generator("ical")
-        calendar_data = calendar_generator.generate(phases, user_info, phase_descriptions, mantras)
+        ical_generator = ICalGenerator()
+        calendar_data = ical_generator.generate(phases, user_info, phase_descriptions, mantras)
 
         file_name = os.path.join(calendar_folder, f"{base_name}.ics")
 
@@ -80,7 +78,6 @@ def main():
                 user_info = extract_info(email_content)
                 logger.info(f"Extracted user info: {user_info}")
 
-                # Extract and log the user's language preference
                 user_language = user_info.get('language', 'en')
                 logger.info(f"User language preference: {user_language}")
 
@@ -94,22 +91,22 @@ def main():
                 user_id = user_manager.create_or_update_user(user_info)
                 logger.info(f"User created/updated with ID: {user_id}")
 
-                # Use the 'when did your last period start?' field if 'last_period_date' is not present
                 last_period_date_str = user_info.get('last_period_date') or user_info.get('when did your last period start?')
                 if not last_period_date_str:
                     logger.error("Last period date not found in user information")
                     continue
 
-                # Parse the date string, handling potential timezone information
                 last_period_date = datetime.strptime(last_period_date_str.split('T')[0], "%Y-%m-%d")
 
                 cycle_length = int(user_info['cycle_length'])
                 period_duration = int(user_info['period_duration'])
-                calendar_type = user_info.get('calendar_service', '').lower() or 'ical'
 
                 phases = calculate_cycle(last_period_date, cycle_length, period_duration, num_months=12)
     
-                calendar_url = create_calendar_file(phases, user_info, language_manager)
+                phase_descriptions = language_manager.get_phase_descriptions(user_language)
+                mantras = language_manager.get_mantras(user_language)
+
+                calendar_url = create_calendar_file(phases, user_info, phase_descriptions, mantras)
                 logger.info(f"Calendar file created: {calendar_url}")
 
                 user_manager.update_user_calendar(user_email, "ical", calendar_url)
