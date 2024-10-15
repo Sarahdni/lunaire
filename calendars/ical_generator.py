@@ -1,12 +1,8 @@
 from icalendar import Calendar, Event
 from datetime import datetime
 from utils.logger import logger
+from .recommendations import generate_recommendations
 
-def generate_recommendations(category, recommendations):
-    description = f"\n{category}:\n"
-    for item in recommendations:
-        description += f"• {item['text'] if isinstance(item, dict) else item}\n"
-    return description
 
 class ICalGenerator:
     def generate(self, phases, user_info, phase_descriptions, mantras):

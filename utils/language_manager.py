@@ -14,6 +14,10 @@ class LanguageManager:
         self.default_language = 'en'
 
     def get_language_path(self, language):
+        """
+        Vérifie si la langue est supportée, sinon utilise la langue par défaut (en).
+        Retourne le chemin du dossier de la langue.
+        """
         logger.info(f"Requested language in LanguageManager: {language}")
         if language not in self.supported_languages:
             logger.warning(f"Unsupported language: {language}. Falling back to {self.default_language}")
@@ -23,6 +27,9 @@ class LanguageManager:
         return path
 
     def get_phase_descriptions(self, language):
+        """
+        Charge le fichier phase_descriptions.json pour la langue donnée
+        """
         path = os.path.join(self.get_language_path(language), 'phase_descriptions.json')
         logger.info(f"Attempting to load phase descriptions from: {path}")
         data = self.load_json_file(path)
@@ -30,6 +37,9 @@ class LanguageManager:
         return data
 
     def get_mantras(self, language):
+        """
+        Charge le fichier mantras.json pour la langue donnée.
+        """
         path = os.path.join(self.get_language_path(language), 'mantras.json')
         logger.info(f"Attempting to load mantras from: {path}")
         data = self.load_json_file(path)
@@ -37,6 +47,9 @@ class LanguageManager:
         return data
 
     def load_json_file(self, file_path):
+        """ 
+        Charge un fichier JSON et gère les erreurs.
+        """
         try:
             with open(file_path, 'r', encoding='utf-8') as file:
                 return json.load(file)

@@ -1,11 +1,5 @@
-
-def generate_recommendations(category, recommendations):
-    description = f"\n{category}:\n"
-    for item in recommendations:
-        description += f"• {item['text'] if isinstance(item, dict) else item}\n"
-    return description
-
 from datetime import datetime, timedelta
+
 
 def calculate_cycle(start_date, cycle_length, period_length, num_months=12):
     if isinstance(start_date, str):

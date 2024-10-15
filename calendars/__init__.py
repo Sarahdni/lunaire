@@ -1,12 +1,11 @@
 """
 Calendars Package
-
-This package provides functionality for generating different types of calendars.
-It includes a factory for creating calendar generators and specific generators
-for iCal, Google Calendar, Outlook, and Apple Calendar formats.
+This package provides functionality for generating iCal format calendars,
+calculating menstrual cycle phases, and generating recommendations.
 """
 
-from .calendar_factory import CalendarFactory
 from .cycle_calculator import calculate_cycle
+from .ical_generator import ICalGenerator
+from .recommendations import generate_recommendations
 
-__all__ = ['CalendarFactory', 'calculate_cycle']
+__all__ = ['calculate_cycle', 'ICalGenerator', 'generate_recommendations']
